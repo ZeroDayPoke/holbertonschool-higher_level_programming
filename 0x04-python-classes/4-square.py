@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""still square like in nature"""
+
+
 class Square:
+    """in moar powerful square square can print square"""
     def __init__(self, size=0):
         self.size = size
     @property

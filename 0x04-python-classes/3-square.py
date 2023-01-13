@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""square remains squared"""
+
+
 class Square:
+    """in new square class uses setter"""
     def __init__(self, size=0):
         self.size = size
     @property

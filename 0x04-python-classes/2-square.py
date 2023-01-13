@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""square squared"""
+
+
 class Square:
+    """in new square square can has area"""
     def __init__(self, size=0):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
