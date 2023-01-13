@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Square is a square?"""
+
+
 class Square:
     """
     A class named Square... that represents a square
