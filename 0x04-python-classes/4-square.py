@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""still square like in nature"""
+"""The Square Module"""
 
 
 class Square:
-    """in moar powerful square square can print square"""
+    """Defines a class named Square"""
     def __init__(self, size=0):
         self.size = size
 

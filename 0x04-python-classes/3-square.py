@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""square remains squared"""
+"""The Square Module"""
 
 
 class Square:
-    """in new square class uses setter"""
+    """Defines a class named Square"""
     def __init__(self, size=0):
         self.size = size
 
