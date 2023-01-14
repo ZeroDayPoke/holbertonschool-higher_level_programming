@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""Square is a square?"""
-
-
 class Square:
-    """
-    A class named Square... that represents a square
-    """
+    """Defines a class named Square"""
     def __init__(self, size):
-        """Square squares have a size"""
+        """
+        Initialize the square object with a size
+        Args:
+            size (int): the size of one side of Square
+        """
         self.__size = size
