@@ -33,9 +33,6 @@ Use without specifying the value of b (default 98)
     >>> add_integer(2)
     100
 
-
-
-
 Non-Numbers
 ===========
 
@@ -52,3 +49,11 @@ Don't add characters...
     >>> add_integer(2, 'v')
     Traceback (most recent call last):
     TypeError: b must be an integer
+
+Don't add nothing...
+
+::
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
