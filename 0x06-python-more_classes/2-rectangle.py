@@ -45,6 +45,7 @@ class Rectangle:
             return ""
         rektrect = "#" * self.__width + "\n"
         rektrect = rektrect * self.__height
+        rektrect = rektrect[:-1]
         return rektrect
 
     def __repr__(self):
