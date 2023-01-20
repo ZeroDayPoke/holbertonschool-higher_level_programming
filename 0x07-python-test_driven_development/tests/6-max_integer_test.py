@@ -12,6 +12,9 @@ class TestMaxInteger(unittest.TestCase):
         """what if jenny phone number?"""
         jenny = [8, 6, 7, 5, 3, 0, 9]
         self.assertEqual(max_integer(jenny), 9)
+    def test_richard(self):
+        dick = "richard"
+        self.assertEqual(max_integer(dick), 'r')
 
 if __name__ == '__main__':
     unittest.main()
