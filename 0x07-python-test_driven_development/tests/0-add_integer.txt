@@ -80,3 +80,11 @@ Don't add strings to numbers...
     >>> add_integer(2, "YOLO")
     Traceback (most recent call last):
     TypeError: b must be an integer
+
+Don't add lists of numbers...
+
+::
+
+    >>> add_integer(2, [4, 44, 444])
+    Traceback (most recent call last):
+    TypeError: b must be an integer
