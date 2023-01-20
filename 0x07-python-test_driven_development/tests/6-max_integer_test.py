@@ -13,11 +13,17 @@ class TestMaxInteger(unittest.TestCase):
         jenny = [8, 6, 7, 5, 3, 0, 9]
         self.assertEqual(max_integer(jenny), 9)
     def test_richard(self):
+        """what if dick list?"""
         dick = "richard"
         self.assertEqual(max_integer(dick), 'r')
     def test_no_richard(self):
+        """what if no dick?"""
         dick = ""
         self.assertEqual(max_integer(dick), None)
+    def test_over_9000(self):
+        """list can has floats?"""
+        power_level = [-4, 9000, 9000.1, 1337]
+        self.assertEqual(max_integer(power_level), 9000.1)
 
 if __name__ == '__main__':
     unittest.main()
