@@ -6,8 +6,8 @@
 
 Function usage for ``add_integer(a, b=98)``.
 
-Numbers
-=======
+GOOD USER
+=========
 
 ``add_integer(...)`` returns the sum of its arguments.  For numbers,
 that value is equivalent to using the ``+`` operator.
@@ -40,8 +40,8 @@ Use without specifying the value of b (default 98)...
     >>> add_integer(2)
     100
 
-Non-Numbers
-===========
+BAD USER
+========
 
 Don't add characters...
 
@@ -88,3 +88,11 @@ Don't add lists of numbers...
     >>> add_integer(2, [4, 44, 444])
     Traceback (most recent call last):
     TypeError: b must be an integer
+
+Don't add numbers that cause an overflow error...
+
+::
+
+    >>> add_integer(float("inf"))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
