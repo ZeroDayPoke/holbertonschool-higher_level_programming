@@ -57,3 +57,11 @@ Don't add nothing...
     >>> add_integer(None)
     Traceback (most recent call last):
     TypeError: a must be an integer
+
+Don't add more than 2 numbers at once...
+
+::
+
+    >>> add_integer(11, 22, 33)
+    Traceback (most recent call last):
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
