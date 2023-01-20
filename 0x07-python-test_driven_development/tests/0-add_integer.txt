@@ -72,3 +72,11 @@ Don't add more than 2 numbers at once...
     >>> add_integer(11, 22, 33)
     Traceback (most recent call last):
     TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Don't add strings to numbers...
+
+::
+
+    >>> add_integer(2, "YOLO")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
