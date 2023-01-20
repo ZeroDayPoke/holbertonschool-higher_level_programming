@@ -19,14 +19,21 @@ that value is equivalent to using the ``+`` operator.
     >>> add_integer(7, 9)
     16
 
-It also works with floating-point values.
+It also works with floating-point values...
 
 ::
 
     >>> add_integer(2.0, 3)
     5
 
-Use without specifying the value of b (default 98)
+It also works with signed numbers...
+
+::
+
+    >>> add_integer(-2.9, 3.0)
+    1
+
+Use without specifying the value of b (default 98)...
 
 ::
 
