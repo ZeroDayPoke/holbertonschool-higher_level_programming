@@ -1,4 +1,4 @@
-# 0-add_integer.txt
+# run test with python3 -m doctest -v ./tests/0-add_integer.txt
 
 ===============================
  How to Use 0-add_integer.py
@@ -36,3 +36,9 @@ Don't use.
     >>> add_integer('v', 2)
     Traceback (most recent call last):
     TypeError: a must be an integer
+
+::
+
+    >>> add_integer(2, 'v')
+    Traceback (most recent call last):
+    TypeError: b must be an integer
