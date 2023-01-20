@@ -1,4 +1,5 @@
 # 0-add_integer.txt
+
 ===============================
  How to Use 0-add_integer.py
 ===============================
@@ -8,33 +9,30 @@ Function usage for ``add_integer(a, b=98)``.
 Numbers
 =======
 
-``my_function()`` returns the product of its arguments.  For numbers,
-that value is equivalent to using the ``*`` operator.
+``add_integer(...)`` returns the sum of its arguments.  For numbers,
+that value is equivalent to using the ``+`` operator.
+
+>>> add_integer = __import__('0-add_integer').add_integer
 
 ::
 
-    >>> from doctest_in_help import my_function
-    >>> my_function(2, 3)
-    6
+    >>> add_integer(7, 9)
+    16
 
 It also works with floating-point values.
 
 ::
 
-    >>> my_function(2.0, 3)
-    6.0
+    >>> add_integer(2.0, 3)
+    5
 
 Non-Numbers
 ===========
 
-Because ``*`` is also defined on data types other than numbers,
-``my_function()`` works just as well if one of the arguments is a
-string, a list, or a tuple.
+Don't use.
 
 ::
 
-    >>> my_function('a', 3)
-    'aaa'
-
-    >>> my_function(['A', 'B', 'C'], 2)
-    ['A', 'B', 'C', 'A', 'B', 'C']
+    >>> add_integer('v', 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
