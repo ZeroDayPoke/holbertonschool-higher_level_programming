@@ -26,10 +26,20 @@ It also works with floating-point values.
     >>> add_integer(2.0, 3)
     5
 
+Use without specifying the value of b (default 98)
+
+::
+
+    >>> add_integer(2)
+    100
+
+
+
+
 Non-Numbers
 ===========
 
-Don't use.
+Don't add characters...
 
 ::
 
