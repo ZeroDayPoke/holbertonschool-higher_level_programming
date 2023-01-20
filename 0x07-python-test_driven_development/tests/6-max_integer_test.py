@@ -8,6 +8,10 @@ class TestMaxInteger(unittest.TestCase):
     def test_empty(self):
         """what if empty list?"""
         self.assertEqual(max_integer([]), None)
+    def test_jennys_phone(self):
+        """what if jenny phone number?"""
+        jenny = [8, 6, 7, 5, 3, 0, 9]
+        self.assertEqual(max_integer(jenny), 9)
 
 if __name__ == '__main__':
     unittest.main()
