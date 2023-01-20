@@ -3,8 +3,7 @@
  How to Use 0-add_integer.py
 ===============================
 
-This library is very simple, since it only has one function called
-``my_function()``.
+Function usage for ``add_integer(a, b=98)``.
 
 Numbers
 =======
