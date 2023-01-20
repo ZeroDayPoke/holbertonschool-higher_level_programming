@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""doc check maybe"""
+
+
 def add_integer(a, b=98):
     """comment test"""
     if not isinstance(a, int) and not isinstance(a, float):
