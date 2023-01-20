@@ -15,6 +15,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_richard(self):
         dick = "richard"
         self.assertEqual(max_integer(dick), 'r')
+    def test_no_richard(self):
+        dick = ""
+        self.assertEqual(max_integer(dick), None)
 
 if __name__ == '__main__':
     unittest.main()
