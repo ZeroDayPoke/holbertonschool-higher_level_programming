@@ -1,6 +1,6 @@
 # 0-add_integer.txt
 ===============================
- How to Use doctest_in_help.py
+ How to Use 0-add_integer.py
 ===============================
 
 This library is very simple, since it only has one function called
