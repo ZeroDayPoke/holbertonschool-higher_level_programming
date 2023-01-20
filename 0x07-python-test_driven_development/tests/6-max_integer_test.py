@@ -24,6 +24,10 @@ class TestMaxInteger(unittest.TestCase):
         """list can has floats?"""
         power_level = [-4, 9000, 9000.1, 1337]
         self.assertEqual(max_integer(power_level), 9000.1)
+    def test_lucky_number(self):
+        """can has just da one?"""
+        sle7en = [7.77]
+        self.assertEqual(max_integer(sle7en), 7.77)
 
 if __name__ == '__main__':
     unittest.main()
