@@ -1,0 +1,42 @@
+# run test with python3 -m doctest -v ./tests/5-text_indentation.txt
+
+===============================
+ How to Use 5-text_indentation.py
+===============================
+
+Function usage for ``text_indentation(text)``.
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+GOOD USER
+=========
+
+User can print 2 nlcs after all '.' '?' ':'
+
+::
+
+    >>> text_indentation("Flux.These?Stupid:Tests")
+    Flux.
+    <BLANKLINE>
+    These?
+    <BLANKLINE>
+    Stupid:
+    <BLANKLINE>
+    Tests
+
+BAD USER
+========
+
+DO NOT forget to pass in a str...
+
+::
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation(88)
+    Traceback (most recent call last):
+    TypeError: text must be a string
