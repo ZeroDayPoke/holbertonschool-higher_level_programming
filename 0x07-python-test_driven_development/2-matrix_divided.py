@@ -4,10 +4,14 @@
 
 def matrix_divided(matrix, div):
     """comment test"""
+    if not isinstance(matrix, list) or not all(
+         isinstance(it_i, list) for it_i in matrix):
+        raise TypeError("matrix must be a matrix (list of lists)"
+                        " of integers/floats")
     if not all(isinstance
                (it_i, (int, float)) for lol in matrix for it_i in lol):
-        raise TypeError
-    ("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists)"
+                        " of integers/floats")
     if not all(len(matrix[0]) == len(lol) for lol in matrix):
         raise TypeError("Each row of the matrix must have the same size")
     if not isinstance(div, (int, float)):

@@ -1,0 +1,30 @@
+# run test with python3 -m doctest -v ./tests/2-matrix_divided.txt
+
+===============================
+ How to Use 2-matrix_divided.py
+===============================
+
+Function usage for ``matrix_divided(matrix, div)``.
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+GOOD USER
+=========
+
+Can use floats in the matrices...
+
+::
+
+    >>> matrix_divided([[-2.2, 4.4, 6.6], [-1.1, 2.2, 3.3]], 3)
+    [[-0.73, 1.47, 2.2], [-0.37, 0.73, 1.1]]
+
+BAD USER
+========
+
+DO NOT forget to actually give the function a lol for arg1...
+
+::
+
+    >>> matrix_divided(None, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
