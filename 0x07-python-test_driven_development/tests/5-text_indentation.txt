@@ -62,3 +62,9 @@ DO NOT forget to pass in a str...
     >>> text_indentation(88)
     Traceback (most recent call last):
     TypeError: text must be a string
+
+::
+
+    >>> text_indentation(["no", "lists"])
+    Traceback (most recent call last):
+    TypeError: text must be a string
