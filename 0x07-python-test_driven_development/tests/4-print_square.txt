@@ -1,0 +1,53 @@
+# run test with python3 -m doctest -v ./tests/4-print_square.txt
+
+===============================
+ How to Use 4-print_square.py
+===============================
+
+Function usage for ``print_square(size)``.
+
+>>> print_square = __import__('4-print_square').print_square
+
+GOOD USER
+=========
+
+I mean it pritns a square FFS...
+
+::
+
+    >>> print_square(2)
+    ##
+    ##
+
+BAD USER
+========
+
+DO NOT forget to enter a size...
+
+::
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+DO NOT forget floats and strs aren't ints...
+
+::
+
+    >>> print_square(8.8)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+::
+
+    >>> print_square("eight")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+DO NOT try to be print negative squares...
+
+::
+
+    >>> print_square(-8)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
