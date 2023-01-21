@@ -29,6 +29,18 @@ DO NOT forget to actually give the function a lol for arg1...
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+DO NOT forget to enter a divisor...
+
+::
+
+    >>> matrix = [
+    ...    [8, 6, 7],
+    ...    [5, 3, 0]
+    ... ]
+    >>> matrix_divided(matrix, None)
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
 DO NOT enter a lol w/ dif num of iterable items...
 
 ::
