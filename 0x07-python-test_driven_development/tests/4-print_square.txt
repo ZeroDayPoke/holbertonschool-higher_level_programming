@@ -19,6 +19,10 @@ I mean it pritns a square FFS...
     ##
     ##
 
+::
+
+    >>> print_square(0)
+
 BAD USER
 ========
 
