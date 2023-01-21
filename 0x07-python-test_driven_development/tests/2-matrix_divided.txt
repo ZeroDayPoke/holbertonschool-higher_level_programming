@@ -40,6 +40,14 @@ Can use both ints and floats in the lol...
     >>> matrix_divided(matrix, 1)
     [[8.0, 6.0, 7.0], [5.5, 3.3, 0.1]]
 
+An empty lol is technically fine... but why bother...
+
+::
+
+    >>> matrix = [[]]
+    >>> matrix_divided(matrix, 1)
+    [[]]
+
 BAD USER
 ========
 
