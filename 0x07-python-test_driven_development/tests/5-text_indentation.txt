@@ -39,6 +39,13 @@ User can print 2 nlcs after all '.' '?' ':'
 
 ::
 
+    >>> text_indentation("un \n real.")
+    un
+    real.
+    <BLANKLINE>
+
+::
+
     >>> text_indentation("What..ever")
     What.
     <BLANKLINE>
