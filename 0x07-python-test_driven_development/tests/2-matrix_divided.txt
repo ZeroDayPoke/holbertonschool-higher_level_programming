@@ -52,3 +52,15 @@ DO NOT enter a stupid divisor...
     >>> matrix_divided(matrix, "BADUSER!")
     Traceback (most recent call last):
     TypeError: div must be a number
+
+DO NOT attempt to divide by zero...
+
+::
+
+    >>> matrix = [
+    ...    [8, 6, 7],
+    ...    [5, 3, 0]
+    ... ]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
