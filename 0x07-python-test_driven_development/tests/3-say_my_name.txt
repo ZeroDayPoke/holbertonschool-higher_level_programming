@@ -1,0 +1,51 @@
+# run test with python3 -m doctest -v ./tests/3-say_my_name.txt
+
+===============================
+ How to Use 3-say_my_name.py
+===============================
+
+Function usage for ``say_my_name(first_name, last_name="")``.
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+GOOD USER
+=========
+
+Can print a first name...
+
+::
+
+    >>> say_my_name("Timmah!")
+    My name is Timmah!
+
+Can print a first and last name...
+
+::
+
+    >>> say_my_name("Thad", "Castle")
+    My name is Thad Castle
+
+BAD USER
+========
+
+DO NOT forget to enter a first_name...
+
+::
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+DO NOT forget numbers are not names...
+
+::
+
+    >>> say_my_name(8)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name("UWU", 4)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
