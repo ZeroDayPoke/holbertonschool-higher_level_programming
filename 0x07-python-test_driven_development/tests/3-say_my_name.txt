@@ -49,3 +49,11 @@ DO NOT forget numbers are not names...
     >>> say_my_name("UWU", 4)
     Traceback (most recent call last):
     TypeError: last_name must be a string
+
+DO NOT try to include a middle name...
+
+::
+
+    >>> say_my_name("Too", "Tired", "Currently")
+    Traceback (most recent call last):
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
