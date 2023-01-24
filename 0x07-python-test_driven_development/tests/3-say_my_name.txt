@@ -28,7 +28,7 @@ Can print a first and last name...
 BAD USER
 ========
 
-DO NOT forget to enter a first_name...
+DO NOT enter a nonetype name
 
 ::
 
@@ -57,3 +57,11 @@ DO NOT try to include a middle name...
     >>> say_my_name("Too", "Tired", "Currently")
     Traceback (most recent call last):
     TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+DO NOT forget to pass in a name...
+
+::
+
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
