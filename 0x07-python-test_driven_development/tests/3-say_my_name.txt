@@ -16,7 +16,7 @@ Can print a first name...
 ::
 
     >>> say_my_name("Timmah!")
-    My name is Timmah!
+    My name is Timmah! 
 
 Can print a first and last name...
 
@@ -24,6 +24,13 @@ Can print a first and last name...
 
     >>> say_my_name("Thad", "Castle")
     My name is Thad Castle
+
+Can print no name... big sadge...
+
+::
+
+    >>> say_my_name("", "")
+    My name is  
 
 BAD USER
 ========
