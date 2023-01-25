@@ -104,3 +104,15 @@ DO NOT forget to pass in a str...
     >>> text_indentation(["no", "lists"])
     Traceback (most recent call last):
     TypeError: text must be a string
+
+::
+
+    >>> text_indentation({"no": "if", "dicts": "please"})
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation(("freaking", "tups"))
+    Traceback (most recent call last):
+    TypeError: text must be a string
