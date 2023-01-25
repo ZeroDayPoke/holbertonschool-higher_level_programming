@@ -76,6 +76,25 @@ User can print 2 nlcs after all '.' '?' ':'
     <BLANKLINE>
     ever
 
+::
+
+    >>> text_indentation("What.\never")
+    What.
+    <BLANKLINE>
+    <BLANKLINE>
+    ever
+
+::
+
+    >>> text_indentation("\n\n What..ever")
+    <BLANKLINE>
+    <BLANKLINE>
+    What.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    ever
+
 User can print nothing...
 
 ::
