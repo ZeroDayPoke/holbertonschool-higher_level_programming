@@ -3,6 +3,7 @@
 
 
 def pascal_triangle(n):
+    """triangle time"""
     if n <= 0:
         return []
     trian = [[1]]
