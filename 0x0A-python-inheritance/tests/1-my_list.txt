@@ -1,0 +1,13 @@
+# run test with python3 -m doctest -v ./tests/1-my_list.txt
+
+===============================
+ How to Use 1-my_list.py
+===============================
+
+>>> MyList = __import__('1-my_list').MyList
+
+GOOD USER
+=========
+
+BAD USER
+========
