@@ -20,6 +20,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
+        """set width prop"""
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -33,6 +34,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        """set height prop"""
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -46,6 +48,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        """set x prop"""
         if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -59,6 +62,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        """set y prop"""
         if type(value) != int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -71,8 +75,8 @@ class Rectangle(Base):
 
     def display(self):
         """prints rect to stdout"""
-        rektrect = "#" * self.__width + "\n"
-        rektrect = rektrect * self.__height
+        rektrect = '\n' * self.y
+        rektrect += (' ' * self.x + '#' * self.width + '\n') * self.height
         rektrect = rektrect[:-1]
         print(rektrect)
 
