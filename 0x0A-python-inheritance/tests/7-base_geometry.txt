@@ -113,3 +113,10 @@ Instantiation requires valid inputs...
     >>> pb.integer_validator("richard", {"dick": 4})
     Traceback (most recent call last):
     TypeError: richard must be an integer
+
+::
+
+    >>> pb = BaseGeometry()
+    >>> pb.integer_validator("richard", (8, 6))
+    Traceback (most recent call last):
+    TypeError: richard must be an integer
