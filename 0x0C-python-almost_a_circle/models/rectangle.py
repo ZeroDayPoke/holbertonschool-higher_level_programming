@@ -86,3 +86,9 @@ class Rectangle(Base):
         strekt += "{}/{} - ".format(self.x, self.y)
         strekt += "{}/{}".format(self.width, self.height)
         return strekt
+
+    def update(self, *args):
+        """meth updates args"""
+        attrs = ["id", "width", "height", "x", "y"]
+        for ii in range(len(args)):
+            setattr(self, attrs[ii], args[ii])
