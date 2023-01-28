@@ -39,6 +39,8 @@ Base class list methods are inherited...
     ['I', 'H']
     >>> das_list.print_sorted()
     ['H', 'I']
+    >>> print(das_list)
+    ['I', 'H']
 
 Class instances have MyList type...
 
@@ -47,8 +49,11 @@ Class instances have MyList type...
     >>> das_list = MyList()
     >>> type(das_list)
     <class '1-my_list.MyList'>
+    >>> print(das_list.print_sorted)
+    <bound method MyList.print_sorted of []>
 
 Will work on dicts...kinda...
+
 ::
 
     >>> MyList({"richard": 1, "dick": 2}).print_sorted()
