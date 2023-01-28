@@ -75,3 +75,10 @@ class Rectangle(Base):
         rektrect = rektrect * self.__height
         rektrect = rektrect[:-1]
         print(rektrect)
+
+    def __str__(self):
+        """rets rect info"""
+        strekt = "[Rectangle] " + "({}) ".format(self.id)
+        strekt += "{}/{} - ".format(self.x, self.y)
+        strekt += "{}/{}".format(self.width, self.height)
+        return strekt
