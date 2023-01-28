@@ -16,6 +16,11 @@ Can print their lists sorted (ascending)...
     >>> MyList([8, 6, 7]).print_sorted()
     [6, 7, 8]
 
+::
+
+    >>> MyList(["Susan", "Timma!", "Thaddius"]).print_sorted()
+    ['Susan', 'Thaddius', 'Timma!']
+
 Can has empty list... but why doe...
 
 ::
