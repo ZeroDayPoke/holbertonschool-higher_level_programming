@@ -9,5 +9,36 @@
 GOOD USER
 =========
 
+Instances of class has type...
+
+::
+
+    >>> pumpbase = BaseGeometry()
+    >>> type(pumpbase)
+    <class '7-base_geometry.BaseGeometry'>
+
+Pass in a name and value...
+
+::
+
+    >>> pumpbase = BaseGeometry()
+    >>> pumpbase.integer_validator("UWU", 4)
+
 BAD USER
 ========
+
+Instantiation requires valid inputs...
+
+::
+
+    >>> pb = BaseGeometry()
+    >>> pb.integer_validator("height", 'v')
+    Traceback (most recent call last):
+    TypeError: height must be an integer
+
+::
+
+    >>> pb = BaseGeometry()
+    >>> pb.integer_validator("height")
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
