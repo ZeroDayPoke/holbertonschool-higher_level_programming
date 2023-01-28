@@ -38,6 +38,14 @@ Base class list methods are inherited...
     >>> print(das_list)
     ['H', 'I']
 
+Class instances have MyList type...
+
+::
+
+    >>> das_list = MyList()
+    >>> type(das_list)
+    <class '1-my_list.MyList'>
+
 BAD USER
 ========
 
