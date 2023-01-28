@@ -28,3 +28,10 @@ class Base:
             else:
                 richards = [ii.to_dictionary() for ii in list_objs]
                 jasonfile.write(Base.to_json_string(richards))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string == "[]" or json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
