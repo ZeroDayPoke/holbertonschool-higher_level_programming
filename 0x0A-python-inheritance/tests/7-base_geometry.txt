@@ -16,10 +16,8 @@ Instances of class has type...
     >>> pumpbase = BaseGeometry()
     >>> type(pumpbase)
     <class '7-base_geometry.BaseGeometry'>
-    >>> print(pumpbase) # doctest: +ELLIPSIS
-    <7-base_geometry.BaseGeometry object at ...>
 
-Pass in a name and value...
+Pass in a name (of any type) and value (positive int)...
 
 ::
 
@@ -170,7 +168,7 @@ value can't be string
     Traceback (most recent call last):
     TypeError: richard must be an integer
 
-still no richards
+still no richards, even in a set
 
 ::
 
