@@ -56,3 +56,10 @@ Instantiation requires valid inputs...
     >>> pb.integer_validator("height", [3, 3])
     Traceback (most recent call last):
     TypeError: height must be an integer
+
+::
+
+    >>> pb = BaseGeometry()
+    >>> pb.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
