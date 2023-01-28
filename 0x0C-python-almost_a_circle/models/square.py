@@ -26,3 +26,13 @@ class Square(Rectangle):
         strekt += "{}/{} - ".format(self.x, self.y)
         strekt += "{}".format(self.width)
         return strekt
+
+    def update(self, *args, **kwargs):
+        """update sqr args"""
+        if args:
+            attrs = ["id", "size", "x", "y"]
+            for ii in range(len(args)):
+                setattr(self, attrs[ii], args[ii])
+        else:
+            for ky, vl in kwargs.items():
+                setattr(self, ky, vl)
