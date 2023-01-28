@@ -68,3 +68,10 @@ class Rectangle(Base):
     def area(self):
         """area of rect is len * width"""
         return self.width * self.height
+
+    def display(self):
+        """prints rect to stdout"""
+        rektrect = "#" * self.__width + "\n"
+        rektrect = rektrect * self.__height
+        rektrect = rektrect[:-1]
+        print(rektrect)
