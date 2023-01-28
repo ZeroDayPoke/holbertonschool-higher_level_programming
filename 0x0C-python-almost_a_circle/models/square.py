@@ -12,13 +12,13 @@ class Square(Rectangle):
     @property
     def size(self):
         """get size property of square"""
-        return self.height
+        return self.width
 
     @size.setter
     def size(self, value):
         """set size prop"""
-        self.height = value
         self.width = value
+        self.height = value
 
     def __str__(self):
         """rets sqr info"""
