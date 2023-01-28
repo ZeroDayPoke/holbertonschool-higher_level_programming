@@ -98,3 +98,9 @@ Instantiation requires valid inputs...
     >>> pb.integer_validator("height", 4, "swag")
     Traceback (most recent call last):
     TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+::
+
+    >>> pb = BaseGeometry("Height")
+    Traceback (most recent call last):
+    TypeError: BaseGeometry() takes no arguments
