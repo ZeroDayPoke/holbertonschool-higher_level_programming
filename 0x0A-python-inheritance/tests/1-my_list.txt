@@ -9,5 +9,20 @@
 GOOD USER
 =========
 
+Can print their lists sorted (ascending)...
+
+::
+
+    >>> MyList([8, 6, 7]).print_sorted()
+    [6, 7, 8]
+
 BAD USER
 ========
+
+Class method takes no args (other than self obv.)
+
+::
+
+    >>> MyList([8, 6, 7]).print_sorted('n')
+    Traceback (most recent call last):
+    TypeError: print_sorted() takes 1 positional argument but 2 were given
