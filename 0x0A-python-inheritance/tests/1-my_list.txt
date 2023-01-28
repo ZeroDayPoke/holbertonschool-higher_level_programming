@@ -48,6 +48,12 @@ Class instances have MyList type...
     >>> type(das_list)
     <class '1-my_list.MyList'>
 
+Will work on dicts...kinda...
+::
+
+    >>> MyList({"richard": 1, "dick": 2}).print_sorted()
+    ['dick', 'richard']
+
 BAD USER
 ========
 
