@@ -77,3 +77,10 @@ Instantiation requires valid inputs...
     >>> pb.integer_validator("None", True)
     Traceback (most recent call last):
     TypeError: None must be an integer
+
+::
+
+    >>> pb = BaseGeometry()
+    >>> pb.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
