@@ -28,6 +28,16 @@ Can has empty list... but why doe...
     >>> MyList([]).print_sorted()
     []
 
+Base class list methods are inherited...
+
+::
+
+    >>> das_list = MyList()
+    >>> das_list.append('H')
+    >>> das_list.append('I')
+    >>> print(das_list)
+    ['H', 'I']
+
 BAD USER
 ========
 
