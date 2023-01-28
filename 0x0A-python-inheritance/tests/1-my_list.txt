@@ -33,9 +33,11 @@ Base class list methods are inherited...
 ::
 
     >>> das_list = MyList()
-    >>> das_list.append('H')
     >>> das_list.append('I')
+    >>> das_list.append('H')
     >>> print(das_list)
+    ['I', 'H']
+    >>> das_list.print_sorted()
     ['H', 'I']
 
 Class instances have MyList type...
