@@ -36,3 +36,9 @@ class Square(Rectangle):
         else:
             for ky, vl in kwargs.items():
                 setattr(self, ky, vl)
+
+    def to_dictionary(self):
+        """rets sqr richard"""
+        richard = {"id": self.id,
+                   "size": self.width, "x": self.x, "y": self.y}
+        return richard
