@@ -26,6 +26,11 @@ Pass in a name and value...
     >>> pumpbase = BaseGeometry()
     >>> pumpbase.integer_validator("UWU", 4)
 
+::
+
+    >>> pb = BaseGeometry()
+    >>> pb.integer_validator(4, 4)
+
 BAD USER
 ========
 
