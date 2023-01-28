@@ -54,3 +54,11 @@ Method won't accept multiple lists...
     >>> MyList([1, 2], [4, 3]).print_sorted()
     Traceback (most recent call last):
     TypeError: list expected at most 1 argument, got 2
+
+Method can't sort NoneType...
+
+::
+
+    >>> MyList(None).print_sorted()
+    Traceback (most recent call last):
+    TypeError: 'NoneType' object is not iterable
