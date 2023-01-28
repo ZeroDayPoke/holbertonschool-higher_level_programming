@@ -36,12 +36,16 @@ BAD USER
 
 Instantiation requires valid inputs...
 
+No char value
+
 ::
 
     >>> pb = BaseGeometry()
     >>> pb.integer_validator("height", 'v')
     Traceback (most recent call last):
     TypeError: height must be an integer
+
+Don't forget to pass in value
 
 ::
 
@@ -50,12 +54,16 @@ Instantiation requires valid inputs...
     Traceback (most recent call last):
     TypeError: integer_validator() missing 1 required positional argument: 'value'
 
+No negative value
+
 ::
 
     >>> pb = BaseGeometry()
     >>> pb.integer_validator("height", -4)
     Traceback (most recent call last):
     ValueError: height must be greater than 0
+
+No list of values
 
 ::
 
@@ -64,12 +72,16 @@ Instantiation requires valid inputs...
     Traceback (most recent call last):
     TypeError: height must be an integer
 
+Don't forget to pass in anything
+
 ::
 
     >>> pb = BaseGeometry()
     >>> pb.integer_validator()
     Traceback (most recent call last):
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+No NoneType value
 
 ::
 
@@ -78,12 +90,16 @@ Instantiation requires valid inputs...
     Traceback (most recent call last):
     TypeError: None must be an integer
 
+No boolean value
+
 ::
 
     >>> pb = BaseGeometry()
     >>> pb.integer_validator("None", True)
     Traceback (most recent call last):
     TypeError: None must be an integer
+
+area method not implemented yet
 
 ::
 
@@ -92,12 +108,16 @@ Instantiation requires valid inputs...
     Traceback (most recent call last):
     Exception: area() is not implemented
 
+don't pass in excess args to non implemented method
+
 ::
 
     >>> pb = BaseGeometry()
     >>> pb.area("YOLO")
     Traceback (most recent call last):
     TypeError: area() takes 1 positional argument but 2 were given
+
+don't pass in excess args to int valid method
 
 ::
 
@@ -106,11 +126,15 @@ Instantiation requires valid inputs...
     Traceback (most recent call last):
     TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
+remember, just supply args to instance of class
+
 ::
 
     >>> pb = BaseGeometry("Height")
     Traceback (most recent call last):
     TypeError: BaseGeometry() takes no arguments
+
+no richards
 
 ::
 
@@ -119,12 +143,16 @@ Instantiation requires valid inputs...
     Traceback (most recent call last):
     TypeError: richard must be an integer
 
+no woopsy toopsy
+
 ::
 
     >>> pb = BaseGeometry()
     >>> pb.integer_validator("richard", (8, 6))
     Traceback (most recent call last):
     TypeError: richard must be an integer
+
+value can't be zero
 
 ::
 
@@ -133,9 +161,20 @@ Instantiation requires valid inputs...
     Traceback (most recent call last):
     ValueError: richard must be greater than 0
 
+value can't be string
+
 ::
 
     >>> pb = BaseGeometry()
     >>> pb.integer_validator("richard", "dick")
+    Traceback (most recent call last):
+    TypeError: richard must be an integer
+
+still no richards
+
+::
+
+    >>> pb = BaseGeometry()
+    >>> pb.integer_validator("richard", {"dick", "richard"})
     Traceback (most recent call last):
     TypeError: richard must be an integer
