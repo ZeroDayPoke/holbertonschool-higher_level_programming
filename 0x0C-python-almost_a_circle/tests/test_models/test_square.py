@@ -103,6 +103,11 @@ class TestBase(unittest.TestCase):
         self.assertEqual(sqr1.id, 5)
         self.assertEqual(sqr1.y, 3)
 
+    def test_upd_kwa_6(self):
+        sqr1 = Square(2, 2, 2, 2)
+        sqr1.update(size=1, x=1, y=1, id=1)
+        self.assertEqual(sqr1.id, 1)
+
     def test_str_sqr(self):
         sqr1 = Square(1, 1, 1, 1)
         sqrstr1 = sqr1.__str__()
