@@ -52,5 +52,49 @@ class TestRect(unittest.TestCase):
         with self.assertRaises(AttributeError):
             print(Rectangle(1, 1, 1, 1, 1).__id)
 
+    def test_flt(self):
+        with self.assertRaises(TypeError):
+            Rectangle(2.2, 1)
+
+    def test_non(self):
+        with self.assertRaises(TypeError):
+            Rectangle(None, 1)
+
+    def test_chr(self):
+        with self.assertRaises(TypeError):
+            Rectangle('a', 1)
+
+    def test_str(self):
+        with self.assertRaises(TypeError):
+            Rectangle("yolo", 1)
+
+    def test_boo(self):
+        with self.assertRaises(TypeError):
+            Rectangle(True, 1)
+
+    def test_lst(self):
+        with self.assertRaises(TypeError):
+            Rectangle([1, 1], 1)
+
+    def test_dic(self):
+        with self.assertRaises(TypeError):
+            Rectangle({"width": 1}, 1)
+
+    def test_set(self):
+        with self.assertRaises(TypeError):
+            Rectangle({1, 1}, 1)
+
+    def test_tup(self):
+        with self.assertRaises(TypeError):
+            Rectangle((1, 1), 1)
+
+    def test_ngv(self):
+        with self.assertRaises(ValueError):
+            Rectangle(-3, 1)
+
+    def test_zed(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 1)
+
 if __name__ == '__main__':
     unittest.main()
