@@ -127,5 +127,36 @@ class TestRect(unittest.TestCase):
         rekt1.update(2, 2, 2, 2, 2)
         self.assertEqual(rekt1.y, 2)
 
+    def test_upd_kwa_1(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.update(id=2)
+        self.assertEqual(rekt1.id, 2)
+
+    def test_upd_kwa_2(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.update(width=2)
+        self.assertEqual(rekt1.width, 2)
+
+    def test_upd_kwa_3(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.update(height=2)
+        self.assertEqual(rekt1.height, 2)
+
+    def test_upd_kwa_4(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.update(x=2)
+        self.assertEqual(rekt1.x, 2)
+
+    def test_upd_kwa_5(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.update(y=2)
+        self.assertEqual(rekt1.y, 2)
+
+    def test_str_rekt(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rektstr1 = rekt1.__str__()
+        rektstr2 = '[Rectangle] (1) 1/1 - 1/1'
+        self.assertEqual(rektstr1, rektstr2)
+
 if __name__ == '__main__':
     unittest.main()
