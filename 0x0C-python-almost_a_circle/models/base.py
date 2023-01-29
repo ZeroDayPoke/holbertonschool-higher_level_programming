@@ -51,4 +51,4 @@ class Base:
         fname = cls.__name__ + ".json"
         with open(fname) as jason:
             richards = Base.from_json_string(jason.read())
-        return richards
+            return [cls.create(**swag) for swag in richards]
