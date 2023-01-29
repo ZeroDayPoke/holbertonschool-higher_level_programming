@@ -290,5 +290,50 @@ class TestRect(unittest.TestCase):
         dict2 = Base.to_json_string([dict1])
         self.assertEqual(len(str(dict1)) + 2, len(dict2))
 
+    def test_get_w(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 1)
+        self.assertEqual(8, rekt1.width)
+
+    def test_get_h(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 1)
+        self.assertEqual(6, rekt1.height)
+
+    def test_get_x(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 1)
+        self.assertEqual(7, rekt1.x)
+
+    def test_get_y(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 1)
+        self.assertEqual(5, rekt1.y)
+
+    def test_get_id(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 1)
+        self.assertEqual(1, rekt1.id)
+
+    def test_set_w(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.width = 7
+        self.assertEqual(7, rekt1.width)
+
+    def test_set_h(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.height = 7
+        self.assertEqual(7, rekt1.height)
+
+    def test_set_x(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.x = 7
+        self.assertEqual(7, rekt1.x)
+
+    def test_set_y(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.y = 7
+        self.assertEqual(7, rekt1.y)
+
+    def test_set_id(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.id = 7
+        self.assertEqual(7, rekt1.id)
+
 if __name__ == '__main__':
     unittest.main()

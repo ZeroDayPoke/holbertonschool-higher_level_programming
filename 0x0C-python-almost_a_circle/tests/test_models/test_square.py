@@ -244,5 +244,25 @@ class TestBase(unittest.TestCase):
         sqr1 = Square(8, 6, 7, 5)
         self.assertEqual(5, sqr1.id)
 
+    def test_set_size(self):
+        sqr1 = Square(8, 6, 7, 5)
+        sqr1.size = 1
+        self.assertEqual(1, sqr1.size)
+
+    def test_set_x(self):
+        sqr1 = Square(8, 6, 7, 5)
+        sqr1.x = 1
+        self.assertEqual(1, sqr1.x)
+
+    def test_set_y(self):
+        sqr1 = Square(8, 6, 7, 5)
+        sqr1.y = 1
+        self.assertEqual(1, sqr1.y)
+
+    def test_set_id(self):
+        sqr1 = Square(8, 6, 7, 5)
+        sqr1.id = 1
+        self.assertEqual(1, sqr1.id)
+
 if __name__ == '__main__':
     unittest.main()
