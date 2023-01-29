@@ -204,5 +204,45 @@ class TestRect(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(3, 3, -3)
 
+    def test_flt_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, 2.2)
+
+    def test_non_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, None)
+
+    def test_chr_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, 'a')
+
+    def test_str_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, "UWU")
+
+    def test_boo_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, True)
+
+    def test_lst_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, [2, 2])
+
+    def test_dic_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, {"size": 1})
+
+    def test_set_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, {1, 1})
+
+    def test_tup_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, (1, 1))
+
+    def test_ngv_y(self):
+        with self.assertRaises(ValueError):
+            Rectangle(3, 3, 3, -3)
+
 if __name__ == '__main__':
     unittest.main()

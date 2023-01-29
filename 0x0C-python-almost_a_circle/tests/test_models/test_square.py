@@ -182,5 +182,45 @@ class TestBase(unittest.TestCase):
         sqr1 = Square(3, 0)
         self.assertEqual(sqr1.x, 0)
 
+    def test_flt_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, 2.2)
+
+    def test_non_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, None)
+
+    def test_chr_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, 'a')
+
+    def test_str_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, "UWU")
+
+    def test_boo_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, True)
+
+    def test_lst_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, [2, 2])
+
+    def test_dic_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, {"size": 1})
+
+    def test_set_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, {1, 1})
+
+    def test_tup_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, (1, 1))
+
+    def test_ngv_y(self):
+        with self.assertRaises(ValueError):
+            Square(3, 3, -3)
+
 if __name__ == '__main__':
     unittest.main()
