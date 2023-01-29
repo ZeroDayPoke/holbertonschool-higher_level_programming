@@ -244,6 +244,46 @@ class TestRect(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(3, 3, 3, -3)
 
+    def test_flt_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 2.2)
+
+    def test_non_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, None)
+
+    def test_chr_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 'a')
+
+    def test_str_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, "UWU")
+
+    def test_boo_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, True)
+
+    def test_lst_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, [2, 2])
+
+    def test_dic_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, {"size": 1})
+
+    def test_set_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, {1, 1})
+
+    def test_tup_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, (1, 1))
+
+    def test_ngv_w(self):
+        with self.assertRaises(ValueError):
+            Rectangle(3, -3)
+
     def test_to_json(self):
         rekt1 = Rectangle(10, 5, 7, 2, 8)
         dict1 = rekt1.to_dictionary()
