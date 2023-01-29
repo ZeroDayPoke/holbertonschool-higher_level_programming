@@ -299,5 +299,49 @@ class TestBase(unittest.TestCase):
         js = Square.to_json_string(dict1)
         self.assertEqual(len(js), 2)
 
+    def test_flt_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square(2.2)
+
+    def test_non_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square(None)
+
+    def test_chr_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square('a')
+
+    def test_str_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square("UWU")
+
+    def test_boo_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square(True)
+
+    def test_lst_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square([2, 2])
+
+    def test_dic_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square({"size": 1})
+
+    def test_set_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square({1, 1})
+
+    def test_tup_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square((1, 1))
+
+    def test_ngv_reg(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Square(-3)
+
+    def test_zed_reg(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Square(0)
+
 if __name__ == '__main__':
     unittest.main()
