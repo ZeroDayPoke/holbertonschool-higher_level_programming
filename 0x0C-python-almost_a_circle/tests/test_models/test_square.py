@@ -284,5 +284,15 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError):
             sqr1.display(777)
 
+    def test_jason_empty(self):
+        dict1 = []
+        js = Square.to_json_string(dict1)
+        self.assertEqual(len(js), 2)
+
+    def test_jason_none(self):
+        dict1 = None
+        js = Square.to_json_string(dict1)
+        self.assertEqual(len(js), 2)
+
 if __name__ == '__main__':
     unittest.main()
