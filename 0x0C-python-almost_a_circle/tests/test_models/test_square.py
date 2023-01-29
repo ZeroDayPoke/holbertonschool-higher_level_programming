@@ -109,5 +109,29 @@ class TestBase(unittest.TestCase):
         sqrstr2 = '[Square] (1) 1/1 - 1'
         self.assertEqual(sqrstr1, sqrstr2)
 
+    def test_privacy_1(self):
+        with self.assertRaises(AttributeError):
+            print(Square(1, 1, 1, 1).__id)
+
+    def test_privacy_2(self):
+        with self.assertRaises(AttributeError):
+            print(Square(1, 1, 1, 1).__size)
+
+    def test_privacy_3(self):
+        with self.assertRaises(AttributeError):
+            print(Square(1, 1, 1, 1).__x)
+
+    def test_privacy_4(self):
+        with self.assertRaises(AttributeError):
+            print(Square(1, 1, 1, 1).__y)
+
+    def test_arg_limit(self):
+        with self.assertRaises(TypeError):
+            Square(1, 2, 3, 4, 5)
+
+    def test_okay_sqr(self):
+        sqr1 = Square(3, 0, 0, 1)
+        self.assertEqual(sqr1.area(), 9)
+
 if __name__ == '__main__':
     unittest.main()
