@@ -343,5 +343,85 @@ class TestBase(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square(0)
 
+    def test_flt_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(2, 2.2)
+
+    def test_non_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(2, None)
+
+    def test_chr_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(2, 'a')
+
+    def test_str_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(2, "UWU")
+
+    def test_boo_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(2, True)
+
+    def test_lst_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(2, [2, 2])
+
+    def test_dic_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(2, {"size": 1})
+
+    def test_set_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(2, {1, 1})
+
+    def test_tup_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(2, (1, 1))
+
+    def test_ngv_reg_x(self):
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            Square(2, -3)
+
+    def test_flt_reg_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(2, 2, 2.2)
+
+    def test_non_reg_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(2, 2, None)
+
+    def test_chr_reg_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(2, 2, 'a')
+
+    def test_str_reg_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(2, 2,"UWU")
+
+    def test_boo_reg_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(2, 2, True)
+
+    def test_lst_reg_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(2, 2, [2, 2])
+
+    def test_dic_reg_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(2, 2, {"size": 1})
+
+    def test_set_reg_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(2, 2, {1, 1})
+
+    def test_tup_reg_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(2, 2, (1, 1))
+
+    def test_ngv_reg_y(self):
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            Square(2, 2, -3)
+
 if __name__ == '__main__':
     unittest.main()
