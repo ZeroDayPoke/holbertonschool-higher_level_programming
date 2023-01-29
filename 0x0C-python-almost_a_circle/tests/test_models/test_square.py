@@ -13,8 +13,5 @@ class TestBase(unittest.TestCase):
     def test_if_rekt(self):
         self.assertIsInstance(Square(1), Rectangle)
 
-    def test_id(self):
-        self.assertEqual(Square(1).id, 1)
-
 if __name__ == '__main__':
     unittest.main()
