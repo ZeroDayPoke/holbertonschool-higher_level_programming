@@ -365,5 +365,49 @@ class TestRect(unittest.TestCase):
         js = Rectangle.to_json_string(dict1)
         self.assertEqual(len(js), 2)
 
+    def test_flt_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(2.2, 2)
+
+    def test_non_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(None, 2)
+
+    def test_chr_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle('a', 2)
+
+    def test_str_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle("UWU", 2)
+
+    def test_boo_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(True, 2)
+
+    def test_lst_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle([2, 2], 2)
+
+    def test_dic_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle({"size": 1}, 2)
+
+    def test_set_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle({1, 1}, 2)
+
+    def test_tup_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle((1, 1), 2)
+
+    def test_ngv_reg(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(-3, 2)
+
+    def test_zed_reg(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(0, 2)
+
 if __name__ == '__main__':
     unittest.main()
