@@ -222,5 +222,11 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(ValueError):
             Square(3, 3, -3)
 
+    def test_richard(self):
+        sqr1 = Square(1, 1, 1 ,1)
+        richard = {"id": 1, "size": 1, "x": 1, "y": 1}
+        dick = sqr1.to_dictionary()
+        self.assertEqual(richard, dick)
+
 if __name__ == '__main__':
     unittest.main()

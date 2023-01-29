@@ -54,5 +54,15 @@ class TestBase(unittest.TestCase):
         cnttest = Base()
         self.assertEqual(cnttest.id, 3)
 
+    def test_jason_rekt(self):
+        rekt1 = Rectangle(2, 2, 2, 2, 2)
+        rekt1_dict = rekt1.to_dictionary()
+        self.assertEqual(type(Base.to_json_string([rekt1_dict])), str)
+
+    def test_jason_sqr(self):
+        sqr1 = Square(2, 2, 2, 2)
+        sqr1_dict = sqr1.to_dictionary()
+        self.assertEqual(type(Base.to_json_string([sqr1_dict])), str)
+
 if __name__ == '__main__':
     unittest.main()

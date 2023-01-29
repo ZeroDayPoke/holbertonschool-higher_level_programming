@@ -244,5 +244,11 @@ class TestRect(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(3, 3, 3, -3)
 
+    def test_to_json(self):
+        rekt1 = Rectangle(10, 5, 7, 2, 8)
+        dict1 = rekt1.to_dictionary()
+        dict2 = Base.to_json_string([dict1])
+        self.assertEqual(len(str(dict1)) + 2, len(dict2))
+
 if __name__ == '__main__':
     unittest.main()
