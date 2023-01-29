@@ -2,6 +2,7 @@
 """unit tests for base.py"""
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestBase(unittest.TestCase):
@@ -41,6 +42,10 @@ class TestBase(unittest.TestCase):
     def test_privacy_1(self):
         with self.assertRaises(AttributeError):
             print(Base.__nb_objects)
+
+    def test_jason(self):
+        with self.assertRaises(TypeError):
+            Base.to_json_string()
 
 if __name__ == '__main__':
     unittest.main()

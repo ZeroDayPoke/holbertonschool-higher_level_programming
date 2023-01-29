@@ -96,5 +96,36 @@ class TestRect(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(0, 1)
 
+    def test_richard(self):
+        rekt1 = Rectangle(1, 1, 1, 1 ,1)
+        richard = {"id": 1, "width": 1, "height": 1, "x": 1, "y": 1}
+        dick = rekt1.to_dictionary()
+        self.assertEqual(richard, dick)
+
+    def test_update_1(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.update(2)
+        self.assertEqual(rekt1.id, 2)
+
+    def test_update_2(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.update(2, 2)
+        self.assertEqual(rekt1.width, 2)
+
+    def test_update_3(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.update(2, 2, 2)
+        self.assertEqual(rekt1.height, 2)
+
+    def test_update_4(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.update(2, 2, 2, 2)
+        self.assertEqual(rekt1.x, 2)
+
+    def test_update_5(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1.update(2, 2, 2, 2, 2)
+        self.assertEqual(rekt1.y, 2)
+
 if __name__ == '__main__':
     unittest.main()
