@@ -164,5 +164,45 @@ class TestRect(unittest.TestCase):
         rektstr2 = '[Rectangle] (1) 1/1 - 1/1'
         self.assertEqual(rektstr1, rektstr2)
 
+    def test_flt_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 2.2)
+
+    def test_non_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, None)
+
+    def test_chr_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 'a')
+
+    def test_str_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, "UWU")
+
+    def test_boo_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, True)
+
+    def test_lst_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, [2, 2])
+
+    def test_dic_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, {"size": 1})
+
+    def test_set_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, {1, 1})
+
+    def test_tup_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, (1, 1))
+
+    def test_ngv_x(self):
+        with self.assertRaises(ValueError):
+            Rectangle(3, 3, -3)
+
 if __name__ == '__main__':
     unittest.main()
