@@ -45,3 +45,10 @@ class Base:
                 nrich = cls(1, 1)
             nrich.update(**dictionary)
             return nrich
+
+    @classmethod
+    def load_from_file(cls):
+        fname = cls.__name__ + ".json"
+        with open(fname) as jason:
+            richards = Base.from_json_string(jason.read())
+        return richards
