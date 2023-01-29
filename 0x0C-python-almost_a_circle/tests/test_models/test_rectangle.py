@@ -32,9 +32,25 @@ class TestRect(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(1, 1, 1, 2, 2, 2)
 
-    def test_privacy(self):
+    def test_privacy_1(self):
         with self.assertRaises(AttributeError):
             print(Rectangle(1, 1, 1, 1, 1).__width)
+
+    def test_privacy_2(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(1, 1, 1, 1, 1).__height)
+
+    def test_privacy_3(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(1, 1, 1, 1, 1).__x)
+
+    def test_privacy_4(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(1, 1, 1, 1, 1).__y)
+
+    def test_privacy_5(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(1, 1, 1, 1, 1).__id)
 
 if __name__ == '__main__':
     unittest.main()
