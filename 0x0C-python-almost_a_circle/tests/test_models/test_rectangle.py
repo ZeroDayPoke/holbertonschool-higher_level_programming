@@ -335,5 +335,25 @@ class TestRect(unittest.TestCase):
         rekt1.id = 7
         self.assertEqual(7, rekt1.id)
 
+    def test_dic_bad(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 3)
+        with self.assertRaises(TypeError):
+            rekt1.to_dictionary(777)
+
+    def test_str_bad(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 3)
+        with self.assertRaises(TypeError):
+            rekt1.__str__(777)
+
+    def test_are_bad(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 3)
+        with self.assertRaises(TypeError):
+            rekt1.area(777)
+
+    def test_dis_bad(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 3)
+        with self.assertRaises(TypeError):
+            rekt1.display(777)
+
 if __name__ == '__main__':
     unittest.main()
