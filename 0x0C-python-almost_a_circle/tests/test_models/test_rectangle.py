@@ -453,5 +453,45 @@ class TestRect(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle(2, 0)
 
+    def test_flt_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(2, 2, 2.2)
+
+    def test_non_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(2, 2, None)
+
+    def test_chr_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(2, 2, 'a')
+
+    def test_str_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(2, 2, "UWU")
+
+    def test_boo_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(2, 2, True)
+
+    def test_lst_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(2, 2, [2, 2])
+
+    def test_dic_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(2, 2, {"size": 1})
+
+    def test_set_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(2, 2, {1, 1})
+
+    def test_tup_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(2, 2, (1, 1))
+
+    def test_ngv_reg_x(self):
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            Rectangle(2, 2, -3)
+
 if __name__ == '__main__':
     unittest.main()
