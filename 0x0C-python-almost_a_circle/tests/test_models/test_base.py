@@ -64,5 +64,15 @@ class TestBase(unittest.TestCase):
         sqr1_dict = sqr1.to_dictionary()
         self.assertEqual(type(Base.to_json_string([sqr1_dict])), str)
 
+    def test_jason_empty(self):
+        dict1 = []
+        js = Base.to_json_string(dict1)
+        self.assertEqual(len(js), 2)
+
+    def test_jason_none(self):
+        dict1 = None
+        js = Base.to_json_string(dict1)
+        self.assertEqual(len(js), 2)
+
 if __name__ == '__main__':
     unittest.main()
