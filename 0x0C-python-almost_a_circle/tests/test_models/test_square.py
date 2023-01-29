@@ -133,5 +133,10 @@ class TestBase(unittest.TestCase):
         sqr1 = Square(3, 0, 0, 1)
         self.assertEqual(sqr1.area(), 9)
 
+    def test_size_init(self):
+        sqr1 = Square(3)
+        self.assertEqual(sqr1.width, sqr1.size)
+        self.assertEqual(sqr1.height, sqr1.size)
+
 if __name__ == '__main__':
     unittest.main()
