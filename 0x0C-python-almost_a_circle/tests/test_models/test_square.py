@@ -228,5 +228,21 @@ class TestBase(unittest.TestCase):
         dick = sqr1.to_dictionary()
         self.assertEqual(richard, dick)
 
+    def test_get_size(self):
+        sqr1 = Square(8, 6, 7, 5)
+        self.assertEqual(8, sqr1.size)
+
+    def test_get_x(self):
+        sqr1 = Square(8, 6, 7, 5)
+        self.assertEqual(6, sqr1.x)
+
+    def test_get_y(self):
+        sqr1 = Square(8, 6, 7, 5)
+        self.assertEqual(7, sqr1.y)
+
+    def test_get_id(self):
+        sqr1 = Square(8, 6, 7, 5)
+        self.assertEqual(5, sqr1.id)
+
 if __name__ == '__main__':
     unittest.main()
