@@ -299,11 +299,11 @@ class TestRect(unittest.TestCase):
         self.assertEqual(6, rekt1.height)
 
     def test_get_x(self):
-        rekt1 = Rectangle(8, 6, 7, 5, 1)
+        rekt1 = Rectangle(8, 6, 7)
         self.assertEqual(7, rekt1.x)
 
     def test_get_y(self):
-        rekt1 = Rectangle(8, 6, 7, 5, 1)
+        rekt1 = Rectangle(8, 6, 7, 5)
         self.assertEqual(5, rekt1.y)
 
     def test_get_id(self):
@@ -321,12 +321,12 @@ class TestRect(unittest.TestCase):
         self.assertEqual(7, rekt1.height)
 
     def test_set_x(self):
-        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1 = Rectangle(1, 1, 1)
         rekt1.x = 7
         self.assertEqual(7, rekt1.x)
 
     def test_set_y(self):
-        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1 = Rectangle(1, 1, 1, 1)
         rekt1.y = 7
         self.assertEqual(7, rekt1.y)
 

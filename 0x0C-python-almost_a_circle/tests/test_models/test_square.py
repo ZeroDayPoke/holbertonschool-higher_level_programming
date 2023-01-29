@@ -229,15 +229,15 @@ class TestBase(unittest.TestCase):
         self.assertEqual(richard, dick)
 
     def test_get_size(self):
-        sqr1 = Square(8, 6, 7, 5)
+        sqr1 = Square(8)
         self.assertEqual(8, sqr1.size)
 
     def test_get_x(self):
-        sqr1 = Square(8, 6, 7, 5)
+        sqr1 = Square(8, 6)
         self.assertEqual(6, sqr1.x)
 
     def test_get_y(self):
-        sqr1 = Square(8, 6, 7, 5)
+        sqr1 = Square(8, 6, 7)
         self.assertEqual(7, sqr1.y)
 
     def test_get_id(self):
@@ -245,17 +245,17 @@ class TestBase(unittest.TestCase):
         self.assertEqual(5, sqr1.id)
 
     def test_set_size(self):
-        sqr1 = Square(8, 6, 7, 5)
+        sqr1 = Square(8)
         sqr1.size = 1
         self.assertEqual(1, sqr1.size)
 
     def test_set_x(self):
-        sqr1 = Square(8, 6, 7, 5)
+        sqr1 = Square(8, 6)
         sqr1.x = 1
         self.assertEqual(1, sqr1.x)
 
     def test_set_y(self):
-        sqr1 = Square(8, 6, 7, 5)
+        sqr1 = Square(8, 6, 7)
         sqr1.y = 1
         self.assertEqual(1, sqr1.y)
 
