@@ -96,5 +96,11 @@ class TestBase(unittest.TestCase):
         with open("Square.json") as fred:
             self.assertEqual(len(fred.read()), 38)
 
+    def test_stf_rkt(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        Rectangle.save_to_file([rekt1])
+        with open("Rectangle.json") as fred:
+            self.assertEqual(len(fred.read()), 52)
+
 if __name__ == '__main__':
     unittest.main()
