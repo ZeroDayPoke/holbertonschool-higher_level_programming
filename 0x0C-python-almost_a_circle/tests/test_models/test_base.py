@@ -4,6 +4,7 @@ import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
+import os
 
 
 class TestBase(unittest.TestCase):
@@ -73,6 +74,27 @@ class TestBase(unittest.TestCase):
         dict1 = None
         js = Base.to_json_string(dict1)
         self.assertEqual(len(js), 2)
+
+    @classmethod
+    def dracarys(self):
+        try:
+            os.remove("Square.json")
+        except IOError:
+            pass
+        try:
+            os.remove("Rectangle.json")
+        except IOError:
+            pass
+        try:
+            os.remove("Base.json")
+        except IOError:
+            pass
+
+    def test_stf_sqr(self):
+        sqr1 = Square(1, 1, 1, 1)
+        Square.save_to_file([sqr1])
+        with open("Square.json") as fred:
+            self.assertEqual(len(fred.read()), 38)
 
 if __name__ == '__main__':
     unittest.main()
