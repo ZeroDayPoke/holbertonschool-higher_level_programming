@@ -49,6 +49,9 @@ class Base:
     @classmethod
     def load_from_file(cls):
         fname = cls.__name__ + ".json"
-        with open(fname) as jason:
-            richards = Base.from_json_string(jason.read())
-            return [cls.create(**swag) for swag in richards]
+        try:
+            with open(fname) as jason:
+                richards = Base.from_json_string(jason.read())
+                return [cls.create(**swag) for swag in richards]
+        except IOError:
+            return []
