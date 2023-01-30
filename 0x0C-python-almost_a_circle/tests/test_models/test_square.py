@@ -446,5 +446,12 @@ class TestBase(unittest.TestCase):
         with open("Square.json") as fred:
             self.assertEqual(len(fred.read()), 38)
 
+    def test_stf_sqr_2(self):
+        sqr1 = Square(1, 1, 1, 1)
+        sqr2 = Square(2, 2, 2, 2)
+        Square.save_to_file([sqr1, sqr2])
+        with open("Square.json") as fred:
+            self.assertEqual(len(fred.read()), 76)
+
 if __name__ == '__main__':
     unittest.main()

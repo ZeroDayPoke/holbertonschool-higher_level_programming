@@ -102,5 +102,19 @@ class TestBase(unittest.TestCase):
         with open("Rectangle.json") as fred:
             self.assertEqual(len(fred.read()), 52)
 
+    def test_stf_sqr_2(self):
+        sqr1 = Square(1, 1, 1, 1)
+        sqr2 = Square(2, 2, 2, 2)
+        Square.save_to_file([sqr1, sqr2])
+        with open("Square.json") as fred:
+            self.assertEqual(len(fred.read()), 76)
+
+    def test_stf_rkt_2(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt2 = Rectangle(2, 2, 2, 2, 2)
+        Rectangle.save_to_file([rekt1, rekt2])
+        with open("Rectangle.json") as fred:
+            self.assertEqual(len(fred.read()), 104)
+
 if __name__ == '__main__':
     unittest.main()
