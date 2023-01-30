@@ -3,6 +3,7 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+import os
 
 
 class TestRect(unittest.TestCase):
@@ -532,6 +533,27 @@ class TestRect(unittest.TestCase):
     def test_ngv_reg_y(self):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(2, 2, 2, -3)
+
+    @classmethod
+    def dracarys(self):
+        try:
+            os.remove("Square.json")
+        except IOError:
+            pass
+        try:
+            os.remove("Rectangle.json")
+        except IOError:
+            pass
+        try:
+            os.remove("Base.json")
+        except IOError:
+            pass
+
+    def test_stf_rkt(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        Rectangle.save_to_file([rekt1])
+        with open("Rectangle.json") as fred:
+            self.assertEqual(len(fred.read()), 52)
 
 if __name__ == '__main__':
     unittest.main()

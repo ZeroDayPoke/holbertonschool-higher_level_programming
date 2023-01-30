@@ -4,6 +4,8 @@ import unittest
 from models.square import Square
 from models.base import Base
 from models.rectangle import Rectangle
+import os
+
 
 class TestBase(unittest.TestCase):
     """da UWUnit tests"""
@@ -422,6 +424,27 @@ class TestBase(unittest.TestCase):
     def test_ngv_reg_y(self):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square(2, 2, -3)
+
+    @classmethod
+    def dracarys(self):
+        try:
+            os.remove("Square.json")
+        except IOError:
+            pass
+        try:
+            os.remove("Rectangle.json")
+        except IOError:
+            pass
+        try:
+            os.remove("Base.json")
+        except IOError:
+            pass
+
+    def test_stf_sqr(self):
+        sqr1 = Square(1, 1, 1, 1)
+        Square.save_to_file([sqr1])
+        with open("Square.json") as fred:
+            self.assertEqual(len(fred.read()), 38)
 
 if __name__ == '__main__':
     unittest.main()
