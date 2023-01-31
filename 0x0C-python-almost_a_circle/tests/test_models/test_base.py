@@ -19,14 +19,12 @@ class TestBase(unittest.TestCase):
             print(Base.__nb_objects)
 
     def test_jason_rekt(self):
-        rekt1 = Rectangle(2, 2, 2, 2, 2)
-        rekt1_dict = rekt1.to_dictionary()
-        self.assertEqual(type(Base.to_json_string([rekt1_dict])), str)
+        rekt1 = {"width": 1, "height": 1, "x": 1, "y": 1, "id": 1}
+        self.assertEqual(type(Base.to_json_string([rekt1])), str)
 
     def test_jason_sqr(self):
-        sqr1 = Square(2, 2, 2, 2)
-        sqr1_dict = sqr1.to_dictionary()
-        self.assertEqual(type(Base.to_json_string([sqr1_dict])), str)
+        sqr1 = {"size": 1, "x": 1, "y": 1, "id": 1}
+        self.assertEqual(type(Base.to_json_string([sqr1])), str)
 
     def test_jason_empty(self):
         dict1 = []
