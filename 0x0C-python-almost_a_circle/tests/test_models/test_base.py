@@ -128,13 +128,13 @@ class TestBase(unittest.TestCase):
         self.assertEqual([], Base.from_json_string("[]"))
 
     def test_crt_sqr(self):
-        sqr1 = Square(1, 1, 1, 1)
+        sqr1 = Square(2, 2, 2, 2)
         dick1 = sqr1.to_dictionary()
         sqr11 = Square.create(**dick1)
         self.assertEqual(str(sqr11), str(sqr1))
 
     def test_crt_rkt(self):
-        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt1 = Rectangle(2, 2, 2, 2, 2)
         dick1 = rekt1.to_dictionary()
         rekt11 = Rectangle.create(**dick1)
         self.assertEqual(str(rekt11), str(rekt1))
