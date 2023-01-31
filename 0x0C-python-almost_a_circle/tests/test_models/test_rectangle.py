@@ -585,7 +585,7 @@ class TestRect(unittest.TestCase):
         rekt1 = Rectangle(1, 1, 1, 1, 1)
         dick1 = rekt1.to_dictionary()
         rekt11 = Rectangle.create(**dick1)
-        self.assertEqual(print(rekt11), print(rekt1))
+        self.assertEqual(str(rekt11), str(rekt1))
 
     def test_lff_rkt(self):
         rekt1 = Rectangle(1, 1, 1, 1)

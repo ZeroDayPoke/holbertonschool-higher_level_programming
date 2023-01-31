@@ -476,7 +476,7 @@ class TestSquare(unittest.TestCase):
         sqr1 = Square(1, 1, 1, 1)
         dick1 = sqr1.to_dictionary()
         sqr11 = Square.create(**dick1)
-        self.assertEqual(print(sqr11), print(sqr1))
+        self.assertEqual(str(sqr11), str(sqr1))
 
     def test_lff_sqr(self):
         sqr1 = Square(1, 1, 1, 1)

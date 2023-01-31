@@ -156,13 +156,13 @@ class TestBase(unittest.TestCase):
         sqr1 = Square(1, 1, 1, 1)
         dick1 = sqr1.to_dictionary()
         sqr11 = Square.create(**dick1)
-        self.assertEqual(print(sqr11), print(sqr1))
+        self.assertEqual(str(sqr11), str(sqr1))
 
     def test_crt_rkt(self):
         rekt1 = Rectangle(1, 1, 1, 1, 1)
         dick1 = rekt1.to_dictionary()
         rekt11 = Rectangle.create(**dick1)
-        self.assertEqual(print(rekt11), print(rekt1))
+        self.assertEqual(str(rekt11), str(rekt1))
 
     def test_lff_sqr(self):
         sqr1 = Square(1, 1, 1, 1)
