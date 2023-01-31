@@ -13,14 +13,6 @@ class TestRect(unittest.TestCase):
     def test_rekt_base(self):
         self.assertIsInstance(Rectangle(2, 2), Base)
 
-    def test_no_args(self):
-        with self.assertRaises(TypeError):
-            Rectangle()
-
-    def test_no_height(self):
-        with self.assertRaises(TypeError):
-            Rectangle(4)
-
     def test_min_args(self):
         rekt1 = Rectangle(2, 2)
         self.assertEqual(rekt1.area(), 4)

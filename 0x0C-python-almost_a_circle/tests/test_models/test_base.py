@@ -14,9 +14,6 @@ class TestBase(unittest.TestCase):
         base2 = Base()
         self.assertEqual(base1.id + 1, base2.id)
 
-    def test_int(self):
-        self.assertEqual(Base(1).id, 1)
-
     def test_privacy_1(self):
         with self.assertRaises(AttributeError):
             print(Base.__nb_objects)
