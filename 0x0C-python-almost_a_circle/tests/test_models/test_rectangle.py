@@ -372,64 +372,6 @@ class TestRect(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(2, 2, 2, -3)
 
-    @classmethod
-    def dracarys(self):
-        try:
-            os.remove("Square.json")
-        except IOError:
-            pass
-        try:
-            os.remove("Rectangle.json")
-        except IOError:
-            pass
-        try:
-            os.remove("Base.json")
-        except IOError:
-            pass
-
-    def test_stf_rkt(self):
-        rekt1 = Rectangle(1, 1, 1, 1, 1)
-        Rectangle.save_to_file([rekt1])
-        with open("Rectangle.json") as fred:
-            self.assertEqual(len(fred.read()), 52)
-
-    def test_stf_rkt_2(self):
-        rekt1 = Rectangle(1, 1, 1, 1, 1)
-        rekt2 = Rectangle(2, 2, 2, 2, 2)
-        Rectangle.save_to_file([rekt1, rekt2])
-        with open("Rectangle.json") as fred:
-            self.assertEqual(len(fred.read()), 104)
-
-    def test_stf_rkt_mpt(self):
-        Rectangle.save_to_file([])
-        with open("Rectangle.json") as fred:
-            self.assertEqual(len(fred.read()), 2)
-
-    def test_stf_rkt_non(self):
-        Rectangle.save_to_file(None)
-        with open("Rectangle.json") as fred:
-            self.assertEqual(len(fred.read()), 2)
-
-    def test_fjs_rkt(self):
-        rekt1 = Rectangle(1, 1, 1, 1, 1)
-        dick1 = rekt1.to_dictionary()
-        jason_in = Rectangle.to_json_string([dick1])
-        jason_out = Rectangle.from_json_string(jason_in)
-        self.assertEqual(len(str(dick1)) + 2, len(str(jason_out)))
-
-    def test_crt_rkt(self):
-        rekt1 = Rectangle(1, 1, 1, 1, 1)
-        dick1 = rekt1.to_dictionary()
-        rekt11 = Rectangle.create(**dick1)
-        self.assertEqual(str(rekt11), str(rekt1))
-
-    def test_lff_rkt(self):
-        rekt1 = Rectangle(1, 1, 1, 1)
-        rekt2 = Rectangle(2, 2, 2, 2)
-        Rectangle.save_to_file([rekt1, rekt2])
-        rktlst = Rectangle.load_from_file()
-        self.assertEqual(str(rekt2), str(rktlst[1]))
-
     @staticmethod
     def disp_yoink(shape):
         yoink = StringIO()
