@@ -112,6 +112,12 @@ class TestBase(unittest.TestCase):
         jason_out = Rectangle.from_json_string(jason_in)
         self.assertEqual(len(str(dick1)) + 2, len(str(jason_out)))
 
+    def test_fjs_non(self):
+        self.assertEqual([], Base.from_json_string(None))
+
+    def test_fjs_mpt(self):
+        self.assertEqual([], Base.from_json_string("[]"))
+
     def test_crt_sqr(self):
         sqr1 = Square(1, 1, 1, 1)
         dick1 = sqr1.to_dictionary()
