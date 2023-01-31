@@ -30,6 +30,18 @@ class TestBase(unittest.TestCase):
         sqr1 = {"size": 1, "x": 1, "y": 1, "id": 1}
         self.assertEqual(type(Base.to_json_string([sqr1])), str)
 
+    def test_jason_rekt_2(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt2 = Rectangle(2, 2, 2, 2, 2)
+        rekt_richard = [rekt1.to_dictionary(), rekt2.to_dictionary()]
+        self.assertEqual(len(Base.to_json_string(rekt_richard)), 104)
+
+    def test_jason_sqr_2(self):
+        sqr1 = Square(1, 1, 1, 1)
+        sqr2 = Square(2, 2, 2, 2)
+        sqr_richard = [sqr1.to_dictionary(), sqr2.to_dictionary()]
+        self.assertEqual(len(Base.to_json_string(sqr_richard)), 76)
+
     def test_jason_empty(self):
         dict1 = []
         js = Base.to_json_string(dict1)
