@@ -210,5 +210,17 @@ class TestBase(unittest.TestCase):
         rektstr = "##\n##\n"
         self.assertEqual(yoink.getvalue(), rektstr)
 
+    def test_str_sqr_nof(self):
+        sqr1 = Square(1, 0, 0, 1)
+        sqrstr1 = sqr1.__str__()
+        sqrstr2 = '[Square] (1) 0/0 - 1'
+        self.assertEqual(sqrstr1, sqrstr2)
+
+    def test_str_rkt_nof(self):
+        rekt1 = Rectangle(1, 1, 0, 0, 1)
+        rektstr1 = rekt1.__str__()
+        rektstr2 = '[Rectangle] (1) 0/0 - 1/1'
+        self.assertEqual(rektstr1, rektstr2)
+
 if __name__ == '__main__':
     unittest.main()

@@ -614,5 +614,11 @@ class TestRect(unittest.TestCase):
         rektstr = "##\n##\n"
         self.assertEqual(yoink.getvalue(), rektstr)
 
+    def test_str_rkt_nof(self):
+        rekt1 = Rectangle(1, 1, 0, 0, 1)
+        rektstr1 = rekt1.__str__()
+        rektstr2 = '[Rectangle] (1) 0/0 - 1/1'
+        self.assertEqual(rektstr1, rektstr2)
+
 if __name__ == '__main__':
     unittest.main()

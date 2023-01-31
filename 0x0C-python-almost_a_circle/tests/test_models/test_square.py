@@ -505,5 +505,11 @@ class TestSquare(unittest.TestCase):
         sqrstr = "##\n##\n"
         self.assertEqual(yoink.getvalue(), sqrstr)
 
+    def test_str_sqr_nof(self):
+        sqr1 = Square(1, 0, 0, 1)
+        sqrstr1 = sqr1.__str__()
+        sqrstr2 = '[Square] (1) 0/0 - 1'
+        self.assertEqual(sqrstr1, sqrstr2)
+
 if __name__ == '__main__':
     unittest.main()
