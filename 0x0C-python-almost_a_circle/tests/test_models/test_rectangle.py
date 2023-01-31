@@ -585,5 +585,12 @@ class TestRect(unittest.TestCase):
         rekt11 = Rectangle.create(**dick1)
         self.assertEqual(print(rekt11), print(rekt1))
 
+    def test_lff_rkt(self):
+        rekt1 = Rectangle(1, 1, 1, 1)
+        rekt2 = Rectangle(2, 2, 2, 2)
+        Rectangle.save_to_file([rekt1, rekt2])
+        rktlst = Rectangle.load_from_file()
+        self.assertEqual(str(rekt2), str(rktlst[1]))
+
 if __name__ == '__main__':
     unittest.main()

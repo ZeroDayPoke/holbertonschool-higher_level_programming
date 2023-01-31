@@ -476,5 +476,12 @@ class TestBase(unittest.TestCase):
         sqr11 = Square.create(**dick1)
         self.assertEqual(print(sqr11), print(sqr1))
 
+    def test_lff_sqr(self):
+        sqr1 = Square(1, 1, 1, 1)
+        sqr2 = Square(2, 2, 2, 2)
+        Square.save_to_file([sqr1, sqr2])
+        sqrlst = Square.load_from_file()
+        self.assertEqual(str(sqr2), str(sqrlst[1]))
+
 if __name__ == '__main__':
     unittest.main()
