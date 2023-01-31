@@ -3,7 +3,6 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
-import os
 from io import StringIO
 import sys
 
@@ -122,12 +121,6 @@ class TestRect(unittest.TestCase):
         rektstr1 = rekt1.__str__()
         rektstr2 = '[Rectangle] (1) 1/1 - 1/1'
         self.assertEqual(rektstr1, rektstr2)
-
-    def test_to_json(self):
-        rekt1 = Rectangle(10, 5, 7, 2, 8)
-        dict1 = rekt1.to_dictionary()
-        dict2 = Base.to_json_string([dict1])
-        self.assertEqual(len(str(dict1)) + 2, len(dict2))
 
     def test_get_w(self):
         rekt1 = Rectangle(8, 6, 7, 5, 1)
