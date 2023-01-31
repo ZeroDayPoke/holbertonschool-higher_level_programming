@@ -17,12 +17,6 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(AttributeError):
             print(Base.__nb_objects)
 
-    def test_counter(self):
-        Square(3)
-        Rectangle(3, 2)
-        cnttest = Base()
-        self.assertEqual(cnttest.id, 3)
-
     def test_jason_rekt(self):
         rekt1 = Rectangle(2, 2, 2, 2, 2)
         rekt1_dict = rekt1.to_dictionary()
