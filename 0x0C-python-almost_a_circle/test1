@@ -1,0 +1,545 @@
+    def test_lff_nofp(self):
+        geolst = Square.load_from_file()
+        self.assertEqual([], geolst)
+
+    def test_lff_bad(self):
+        with self.assertRaises(TypeError):
+            Base.load_from_file(1, 2)
+
+    def test_lff_nofp(self):
+        geolst = Rectangle.load_from_file()
+        self.assertEqual([], geolst)
+
+    def test_lff_nofp(self):
+        geolst = Base.load_from_file()
+        self.assertEqual([], geolst)
+
+    def test_flt(self):
+        with self.assertRaises(TypeError):
+            Square(2.2)
+
+    def test_non(self):
+        with self.assertRaises(TypeError):
+            Square(None)
+
+    def test_chr(self):
+        with self.assertRaises(TypeError):
+            Square('a')
+
+    def test_str(self):
+        with self.assertRaises(TypeError):
+            Square("UWU")
+
+    def test_boo(self):
+        with self.assertRaises(TypeError):
+            Square(True)
+
+    def test_lst(self):
+        with self.assertRaises(TypeError):
+            Square([2, 2])
+
+    def test_dic(self):
+        with self.assertRaises(TypeError):
+            Square({"size": 1})
+
+    def test_set(self):
+        with self.assertRaises(TypeError):
+            Square({1, 1})
+
+    def test_tup(self):
+        with self.assertRaises(TypeError):
+            Square((1, 1))
+
+    def test_ngv(self):
+        with self.assertRaises(ValueError):
+            Square(-3)
+
+    def test_zed(self):
+        with self.assertRaises(ValueError):
+            Square(0)
+
+    def test_flt(self):
+        with self.assertRaises(TypeError):
+            Rectangle(2.2, 1)
+
+    def test_non(self):
+        with self.assertRaises(TypeError):
+            Rectangle(None, 1)
+
+    def test_chr(self):
+        with self.assertRaises(TypeError):
+            Rectangle('a', 1)
+
+    def test_str(self):
+        with self.assertRaises(TypeError):
+            Rectangle("yolo", 1)
+
+    def test_boo(self):
+        with self.assertRaises(TypeError):
+            Rectangle(True, 1)
+
+    def test_lst(self):
+        with self.assertRaises(TypeError):
+            Rectangle([1, 1], 1)
+
+    def test_dic(self):
+        with self.assertRaises(TypeError):
+            Rectangle({"width": 1}, 1)
+
+    def test_set(self):
+        with self.assertRaises(TypeError):
+            Rectangle({1, 1}, 1)
+
+    def test_tup(self):
+        with self.assertRaises(TypeError):
+            Rectangle((1, 1), 1)
+
+    def test_ngv(self):
+        with self.assertRaises(ValueError):
+            Rectangle(-3, 1)
+
+    def test_zed(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 1)
+
+    def test_flt_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 2.2)
+
+    def test_non_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, None)
+
+    def test_chr_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 'a')
+
+    def test_str_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, "UWU")
+
+    def test_boo_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, True)
+
+    def test_lst_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, [2, 2])
+
+    def test_dic_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, {"size": 1})
+
+    def test_set_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, {1, 1})
+
+    def test_tup_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, (1, 1))
+
+    def test_ngv_x(self):
+        with self.assertRaises(ValueError):
+            Rectangle(3, 3, -3)
+
+    def test_flt_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, 2.2)
+
+    def test_non_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, None)
+
+    def test_chr_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, 'a')
+
+    def test_str_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, "UWU")
+
+    def test_boo_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, True)
+
+    def test_lst_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, [2, 2])
+
+    def test_dic_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, {"size": 1})
+
+    def test_set_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, {1, 1})
+
+    def test_tup_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 3, 3, (1, 1))
+
+    def test_ngv_y(self):
+        with self.assertRaises(ValueError):
+            Rectangle(3, 3, 3, -3)
+
+    def test_flt_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 2.2)
+
+    def test_non_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, None)
+
+    def test_chr_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, 'a')
+
+    def test_str_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, "UWU")
+
+    def test_boo_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, True)
+
+    def test_lst_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, [2, 2])
+
+    def test_dic_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, {"size": 1})
+
+    def test_set_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, {1, 1})
+
+    def test_tup_w(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3, (1, 1))
+
+    def test_ngv_w(self):
+        with self.assertRaises(ValueError):
+            Rectangle(3, -3)
+
+    def test_flt(self):
+        self.assertEqual(Base(1.1).id, 1.1)
+
+    def test_chr(self):
+        self.assertEqual(Base('a').id, 'a')
+
+    def test_str(self):
+        self.assertEqual(Base("hi").id, "hi")
+
+    def test_boo(self):
+        self.assertEqual(Base(True).id, True)
+
+    def test_lst(self):
+        self.assertEqual(Base([1, 1]).id, [1, 1])
+
+    def test_dic(self):
+        self.assertEqual(Base({"richard": 1}).id, {"richard": 1})
+
+    def test_tup(self):
+        self.assertEqual(Base((1, 1)).id, (1, 1))
+
+    def test_set(self):
+        self.assertEqual(Base({1, 1}).id, {1, 1})
+
+    def test_flt_x(self):
+        with self.assertRaises(TypeError):
+            Square(3, 2.2)
+
+    def test_non_x(self):
+        with self.assertRaises(TypeError):
+            Square(3, None)
+
+    def test_chr_x(self):
+        with self.assertRaises(TypeError):
+            Square(3, 'a')
+
+    def test_str_x(self):
+        with self.assertRaises(TypeError):
+            Square(3, "UWU")
+
+    def test_boo_x(self):
+        with self.assertRaises(TypeError):
+            Square(3, True)
+
+    def test_lst_x(self):
+        with self.assertRaises(TypeError):
+            Square(3, [2, 2])
+
+    def test_dic_x(self):
+        with self.assertRaises(TypeError):
+            Square(3, {"size": 1})
+
+    def test_set_x(self):
+        with self.assertRaises(TypeError):
+            Square(3, {1, 1})
+
+    def test_tup_x(self):
+        with self.assertRaises(TypeError):
+            Square(3, (1, 1))
+
+    def test_ngv_x(self):
+        with self.assertRaises(ValueError):
+            Square(3, -3)
+
+    def test_zed_x(self):
+        sqr1 = Square(3, 0)
+        self.assertEqual(sqr1.x, 0)
+
+    def test_flt_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, 2.2)
+
+    def test_non_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, None)
+
+    def test_chr_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, 'a')
+
+    def test_str_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, "UWU")
+
+    def test_boo_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, True)
+
+    def test_lst_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, [2, 2])
+
+    def test_dic_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, {"size": 1})
+
+    def test_set_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, {1, 1})
+
+    def test_tup_y(self):
+        with self.assertRaises(TypeError):
+            Square(3, 3, (1, 1))
+
+    def test_ngv_y(self):
+        with self.assertRaises(ValueError):
+            Square(3, 3, -3)
+
+    def test_stf_sqr(self):
+        sqr1 = Square(1, 1, 1, 1)
+        Square.save_to_file([sqr1])
+        with open("Square.json") as fred:
+            self.assertEqual(len(fred.read()), 38)
+
+    def test_stf_sqr_2(self):
+        sqr1 = Square(1, 1, 1, 1)
+        sqr2 = Square(2, 2, 2, 2)
+        Square.save_to_file([sqr1, sqr2])
+        with open("Square.json") as fred:
+            self.assertEqual(len(fred.read()), 76)
+
+    def test_stf_sqr_mpt(self):
+        Square.save_to_file([])
+        with open("Square.json") as fred:
+            self.assertEqual(len(fred.read()), 2)
+
+    def test_stf_sqr_non(self):
+        Square.save_to_file(None)
+        with open("Square.json") as fred:
+            self.assertEqual(len(fred.read()), 2)
+
+    def test_fjs_sqr(self):
+        sqr1 = Square(1, 1, 1, 1)
+        dick1 = sqr1.to_dictionary()
+        jason_in = Square.to_json_string([dick1])
+        jason_out = Square.from_json_string(jason_in)
+        self.assertEqual(len(str(dick1)) + 2, len(str(jason_out)))
+
+    def test_crt_sqr(self):
+        sqr1 = Square(1, 1, 1, 1)
+        dick1 = sqr1.to_dictionary()
+        sqr11 = Square.create(**dick1)
+        self.assertEqual(str(sqr11), str(sqr1))
+
+    def test_lff_sqr(self):
+        sqr1 = Square(1, 1, 1, 1)
+        sqr2 = Square(2, 2, 2, 2)
+        Square.save_to_file([sqr1, sqr2])
+        sqrlst = Square.load_from_file()
+        self.assertEqual(str(sqr2), str(sqrlst[1]))
+
+    def test_stf_rkt(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        Rectangle.save_to_file([rekt1])
+        with open("Rectangle.json") as fred:
+            self.assertEqual(len(fred.read()), 52)
+
+    def test_stf_rkt_2(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        rekt2 = Rectangle(2, 2, 2, 2, 2)
+        Rectangle.save_to_file([rekt1, rekt2])
+        with open("Rectangle.json") as fred:
+            self.assertEqual(len(fred.read()), 104)
+
+    def test_stf_rkt_mpt(self):
+        Rectangle.save_to_file([])
+        with open("Rectangle.json") as fred:
+            self.assertEqual(len(fred.read()), 2)
+
+    def test_stf_rkt_non(self):
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json") as fred:
+            self.assertEqual(len(fred.read()), 2)
+
+    def test_fjs_rkt(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        dick1 = rekt1.to_dictionary()
+        jason_in = Rectangle.to_json_string([dick1])
+        jason_out = Rectangle.from_json_string(jason_in)
+        self.assertEqual(len(str(dick1)) + 2, len(str(jason_out)))
+
+    def test_crt_rkt(self):
+        rekt1 = Rectangle(1, 1, 1, 1, 1)
+        dick1 = rekt1.to_dictionary()
+        rekt11 = Rectangle.create(**dick1)
+        self.assertEqual(str(rekt11), str(rekt1))
+
+    def test_lff_rkt(self):
+        rekt1 = Rectangle(1, 1, 1, 1)
+        rekt2 = Rectangle(2, 2, 2, 2)
+        Rectangle.save_to_file([rekt1, rekt2])
+        rktlst = Rectangle.load_from_file()
+        self.assertEqual(str(rekt2), str(rktlst[1]))
+
+    def test_sqr_dis(self):
+        sqr1 = Square(2, 1, 1, 1)
+        yoink = TestBase.disp_yoink(sqr1)
+        sqrstr = "\n ##\n ##\n"
+        self.assertEqual(yoink.getvalue(), sqrstr)
+
+    def test_sqr_dis_nof(self):
+        sqr1 = Square(2, 0, 0, 0)
+        yoink = TestBase.disp_yoink(sqr1)
+        sqrstr = "##\n##\n"
+        self.assertEqual(yoink.getvalue(), sqrstr)
+
+    def test_rkt_dis(self):
+        rekt1 = Rectangle(2, 2, 1, 1, 1)
+        yoink = TestBase.disp_yoink(rekt1)
+        rektstr = "\n ##\n ##\n"
+        self.assertEqual(yoink.getvalue(), rektstr)
+
+    def test_rkt_dis_nof(self):
+        rekt1 = Rectangle(2, 2, 0, 0, 0)
+        yoink = TestBase.disp_yoink(rekt1)
+        rektstr = "##\n##\n"
+        self.assertEqual(yoink.getvalue(), rektstr)
+
+    def test_str_sqr_nof(self):
+        sqr1 = Square(1, 0, 0, 1)
+        sqrstr1 = sqr1.__str__()
+        sqrstr2 = '[Square] (1) 0/0 - 1'
+        self.assertEqual(sqrstr1, sqrstr2)
+
+    def test_str_rkt_nof(self):
+        rekt1 = Rectangle(1, 1, 0, 0, 1)
+        rektstr1 = rekt1.__str__()
+        rektstr2 = '[Rectangle] (1) 0/0 - 1/1'
+        self.assertEqual(rektstr1, rektstr2)
+
+    def test_jason_empty(self):
+        dict1 = []
+        js = Rectangle.to_json_string(dict1)
+        self.assertEqual(len(js), 2)
+
+    def test_jason_none(self):
+        dict1 = None
+        js = Rectangle.to_json_string(dict1)
+        self.assertEqual(len(js), 2)
+
+    def test_dic_bad(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 3)
+        with self.assertRaises(TypeError):
+            rekt1.to_dictionary(777)
+
+    def test_str_bad(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 3)
+        with self.assertRaises(TypeError):
+            rekt1.__str__(777)
+
+    def test_are_bad(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 3)
+        with self.assertRaises(TypeError):
+            rekt1.area(777)
+
+    def test_dis_bad(self):
+        rekt1 = Rectangle(8, 6, 7, 5, 3)
+        with self.assertRaises(TypeError):
+            rekt1.display(777)
+
+    def test_to_json(self):
+        rekt1 = Rectangle(10, 5, 7, 2, 8)
+        dict1 = rekt1.to_dictionary()
+        dict2 = Base.to_json_string([dict1])
+        self.assertEqual(len(str(dict1)) + 2, len(dict2))
+
+    def test_dic_bad(self):
+        sqr1 = Square(8, 6, 7, 5)
+        with self.assertRaises(TypeError):
+            sqr1.to_dictionary(777)
+
+    def test_str_bad(self):
+        sqr1 = Square(8, 6, 7, 5)
+        with self.assertRaises(TypeError):
+            sqr1.__str__(777)
+
+    def test_are_bad(self):
+        sqr1 = Square(8, 6, 7, 5)
+        with self.assertRaises(TypeError):
+            sqr1.area(777)
+
+    def test_dis_bad(self):
+        sqr1 = Square(8, 6, 7, 5)
+        with self.assertRaises(TypeError):
+            sqr1.display(777)
+
+    def test_jason_empty(self):
+        dict1 = []
+        js = Square.to_json_string(dict1)
+        self.assertEqual(len(js), 2)
+
+    def test_jason_none(self):
+        dict1 = None
+        js = Square.to_json_string(dict1)
+        self.assertEqual(len(js), 2)
+
+    def test_int(self):
+        self.assertEqual(Base(1).id, 1)
+
+    def test_no_args(self):
+        with self.assertRaises(TypeError):
+            Rectangle()
+
+    def test_no_height(self):
+        with self.assertRaises(TypeError):
+            Rectangle(4)
+
+    def test_jason(self):
+        with self.assertRaises(TypeError):
+            Base.to_json_string()
+    
+    def test_multi_rect(self):
+        rekt1 = Rectangle(1, 1)
+        rekt2 = Rectangle(1, 1)
+        self.assertEqual(rekt1.id, rekt2.id - 1)
+
+    def test_counter(self):
+        Square(3)
+        Rectangle(3, 2)
+        cnttest = Base()
+        self.assertEqual(cnttest.id, 3)
