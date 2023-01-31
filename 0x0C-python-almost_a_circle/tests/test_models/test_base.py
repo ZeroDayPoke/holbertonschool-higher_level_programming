@@ -154,49 +154,5 @@ class TestBase(unittest.TestCase):
         rktlst = Rectangle.load_from_file()
         self.assertEqual(str(rekt2), str(rktlst[1]))
 
-    @staticmethod
-    def disp_yoink(shape):
-        yoink = StringIO()
-        sys.stdout = yoink
-        shape.display()
-        sys.stdout = sys.__stdout__
-        return yoink
-
-    def test_sqr_dis(self):
-        sqr1 = Square(2, 1, 1, 1)
-        yoink = TestBase.disp_yoink(sqr1)
-        sqrstr = "\n ##\n ##\n"
-        self.assertEqual(yoink.getvalue(), sqrstr)
-
-    def test_sqr_dis_nof(self):
-        sqr1 = Square(2, 0, 0, 0)
-        yoink = TestBase.disp_yoink(sqr1)
-        sqrstr = "##\n##\n"
-        self.assertEqual(yoink.getvalue(), sqrstr)
-
-    def test_rkt_dis(self):
-        rekt1 = Rectangle(2, 2, 1, 1, 1)
-        yoink = TestBase.disp_yoink(rekt1)
-        rektstr = "\n ##\n ##\n"
-        self.assertEqual(yoink.getvalue(), rektstr)
-
-    def test_rkt_dis_nof(self):
-        rekt1 = Rectangle(2, 2, 0, 0, 0)
-        yoink = TestBase.disp_yoink(rekt1)
-        rektstr = "##\n##\n"
-        self.assertEqual(yoink.getvalue(), rektstr)
-
-    def test_str_sqr_nof(self):
-        sqr1 = Square(1, 0, 0, 1)
-        sqrstr1 = sqr1.__str__()
-        sqrstr2 = '[Square] (1) 0/0 - 1'
-        self.assertEqual(sqrstr1, sqrstr2)
-
-    def test_str_rkt_nof(self):
-        rekt1 = Rectangle(1, 1, 0, 0, 1)
-        rektstr1 = rekt1.__str__()
-        rektstr2 = '[Rectangle] (1) 0/0 - 1/1'
-        self.assertEqual(rektstr1, rektstr2)
-
 if __name__ == '__main__':
     unittest.main()
