@@ -470,5 +470,11 @@ class TestBase(unittest.TestCase):
         jason_out = Square.from_json_string(jason_in)
         self.assertEqual(len(str(dick1)) + 2, len(str(jason_out)))
 
+    def test_crt_sqr(self):
+        sqr1 = Square(1, 1, 1, 1)
+        dick1 = sqr1.to_dictionary()
+        sqr11 = Square.create(**dick1)
+        self.assertEqual(print(sqr11), print(sqr1))
+
 if __name__ == '__main__':
     unittest.main()
