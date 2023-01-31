@@ -194,16 +194,6 @@ class TestRect(unittest.TestCase):
         with self.assertRaises(TypeError):
             rekt1.display(777)
 
-    def test_jason_empty(self):
-        dict1 = []
-        js = Rectangle.to_json_string(dict1)
-        self.assertEqual(len(js), 2)
-
-    def test_jason_none(self):
-        dict1 = None
-        js = Rectangle.to_json_string(dict1)
-        self.assertEqual(len(js), 2)
-
     def test_flt_reg(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle(2.2, 2)
