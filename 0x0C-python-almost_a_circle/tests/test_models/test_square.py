@@ -499,5 +499,11 @@ class TestSquare(unittest.TestCase):
         sqrstr = "\n ##\n ##\n"
         self.assertEqual(yoink.getvalue(), sqrstr)
 
+    def test_sqr_dis_nof(self):
+        sqr1 = Square(2, 0, 0, 0)
+        yoink = TestSquare.disp_yoink(sqr1)
+        sqrstr = "##\n##\n"
+        self.assertEqual(yoink.getvalue(), sqrstr)
+
 if __name__ == '__main__':
     unittest.main()

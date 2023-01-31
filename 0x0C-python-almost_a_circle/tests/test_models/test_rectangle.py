@@ -608,5 +608,11 @@ class TestRect(unittest.TestCase):
         rektstr = "\n ##\n ##\n"
         self.assertEqual(yoink.getvalue(), rektstr)
 
+    def test_rkt_dis_nof(self):
+        rekt1 = Rectangle(2, 2, 0, 0, 0)
+        yoink = TestRect.disp_yoink(rekt1)
+        rektstr = "##\n##\n"
+        self.assertEqual(yoink.getvalue(), rektstr)
+
 if __name__ == '__main__':
     unittest.main()
