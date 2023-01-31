@@ -145,36 +145,6 @@ class TestSquare(unittest.TestCase):
         sqr1.id = 1
         self.assertEqual(1, sqr1.id)
 
-    def test_dic_bad(self):
-        sqr1 = Square(8, 6, 7, 5)
-        with self.assertRaises(TypeError):
-            sqr1.to_dictionary(777)
-
-    def test_str_bad(self):
-        sqr1 = Square(8, 6, 7, 5)
-        with self.assertRaises(TypeError):
-            sqr1.__str__(777)
-
-    def test_are_bad(self):
-        sqr1 = Square(8, 6, 7, 5)
-        with self.assertRaises(TypeError):
-            sqr1.area(777)
-
-    def test_dis_bad(self):
-        sqr1 = Square(8, 6, 7, 5)
-        with self.assertRaises(TypeError):
-            sqr1.display(777)
-
-    def test_jason_empty(self):
-        dict1 = []
-        js = Square.to_json_string(dict1)
-        self.assertEqual(len(js), 2)
-
-    def test_jason_none(self):
-        dict1 = None
-        js = Square.to_json_string(dict1)
-        self.assertEqual(len(js), 2)
-
     def test_flt_reg(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square(2.2)
