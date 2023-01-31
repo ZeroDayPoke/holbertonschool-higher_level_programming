@@ -226,5 +226,9 @@ class TestBase(unittest.TestCase):
         geolst = Square.load_from_file()
         self.assertEqual([], geolst)
 
+    def test_lff_bad(self):
+        with self.assertRaises(TypeError):
+            Base.load_from_file(1, 2)
+
 if __name__ == '__main__':
     unittest.main()
