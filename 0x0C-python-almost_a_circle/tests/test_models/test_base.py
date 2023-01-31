@@ -133,11 +133,35 @@ class TestBase(unittest.TestCase):
         sqr11 = Square.create(**dick1)
         self.assertEqual(str(sqr11), str(sqr1))
 
+    def test_crt_sqr_neq(self):
+        sqr1 = Square(2, 2, 2, 2)
+        dick1 = sqr1.to_dictionary()
+        sqr11 = Square.create(**dick1)
+        self.assertNotEqual(sqr11, sqr1)
+
+    def test_crt_sqr_not(self):
+        sqr1 = Square(2, 2, 2, 2)
+        dick1 = sqr1.to_dictionary()
+        sqr11 = Square.create(**dick1)
+        self.assertIsNot(sqr11, sqr1)
+
     def test_crt_rkt(self):
         rekt1 = Rectangle(2, 2, 2, 2, 2)
         dick1 = rekt1.to_dictionary()
         rekt11 = Rectangle.create(**dick1)
         self.assertEqual(str(rekt11), str(rekt1))
+
+    def test_crt_rkt_neq(self):
+        rekt1 = Rectangle(2, 2, 2, 2, 2)
+        dick1 = rekt1.to_dictionary()
+        rekt11 = Rectangle.create(**dick1)
+        self.assertNotEqual(rekt1, rekt11)
+
+    def test_crt_rkt_not(self):
+        rekt1 = Rectangle(2, 2, 2, 2, 2)
+        dick1 = rekt1.to_dictionary()
+        rekt11 = Rectangle.create(**dick1)
+        self.assertIsNot(rekt1, rekt11)
 
     def test_lff_sqr(self):
         sqr1 = Square(1, 1, 1, 1)
