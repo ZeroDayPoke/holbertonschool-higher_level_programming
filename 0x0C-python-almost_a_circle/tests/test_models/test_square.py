@@ -245,6 +245,18 @@ class TestSquare(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Square(2, -3)
 
+    def test_cmp_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, complex(3))
+
+    def test_nan_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, float('nan'))
+
+    def test_inf_reg_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, float('inf'))
+
     def test_flt_reg_y(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square(2, 2, 2.2)
@@ -284,6 +296,18 @@ class TestSquare(unittest.TestCase):
     def test_ngv_reg_y(self):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square(2, 2, -3)
+
+    def test_cmp_reg_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, complex(3))
+
+    def test_nan_reg_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, float('nan'))
+
+    def test_inf_reg_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, float('inf'))
 
     @staticmethod
     def disp_yoink(shape):
