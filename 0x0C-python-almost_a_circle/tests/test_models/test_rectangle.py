@@ -348,5 +348,12 @@ class TestRect(unittest.TestCase):
         rektstr2 = '[Rectangle] (1) 0/0 - 1/1'
         self.assertEqual(rektstr1, rektstr2)
 
+    def test_str_rkt_nid(self):
+        rekt1 = Rectangle(1, 1)
+        rekt1.update(id='')
+        rektstr1 = rekt1.__str__()
+        rektstr2 = '[Rectangle] () 0/0 - 1/1'
+        self.assertEqual(rektstr1, rektstr2)
+
 if __name__ == '__main__':
     unittest.main()
