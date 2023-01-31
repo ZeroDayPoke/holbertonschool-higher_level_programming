@@ -9,6 +9,11 @@ from models.square import Square
 class TestBase(unittest.TestCase):
     """da UWUnit tests"""
 
+    def test_non(self):
+        base1 = Base(None)
+        base2 = Base()
+        self.assertEqual(base1.id + 1, base2.id)
+
     def test_privacy_1(self):
         with self.assertRaises(AttributeError):
             print(Base.__nb_objects)
