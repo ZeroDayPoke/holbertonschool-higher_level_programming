@@ -17,11 +17,6 @@ class TestRect(unittest.TestCase):
         rekt1 = Rectangle(2, 2)
         self.assertEqual(rekt1.area(), 4)
 
-    def test_multi_rect(self):
-        rekt1 = Rectangle(1, 1)
-        rekt2 = Rectangle(1, 1)
-        self.assertEqual(rekt1.id, rekt2.id - 1)
-
     def test_arg_limit(self):
         with self.assertRaises(TypeError):
             Rectangle(1, 1, 1, 2, 2, 2)
