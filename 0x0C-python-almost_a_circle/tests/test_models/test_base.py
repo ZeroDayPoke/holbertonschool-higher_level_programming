@@ -138,5 +138,9 @@ class TestBase(unittest.TestCase):
         rktlst = Rectangle.load_from_file()
         self.assertEqual(str(rekt2), str(rktlst[1]))
 
+    def test_lff_dne(self):
+        loadup = Base.load_from_file()
+        self.assertEqual([], loadup)
+
 if __name__ == '__main__':
     unittest.main()
