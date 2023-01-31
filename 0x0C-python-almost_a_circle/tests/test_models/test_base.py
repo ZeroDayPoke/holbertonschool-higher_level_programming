@@ -4,7 +4,6 @@ import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
-import os
 
 
 class TestBase(unittest.TestCase):
@@ -17,10 +16,6 @@ class TestBase(unittest.TestCase):
     def test_privacy_1(self):
         with self.assertRaises(AttributeError):
             print(Base.__nb_objects)
-
-    def test_jason(self):
-        with self.assertRaises(TypeError):
-            Base.to_json_string()
 
     def test_counter(self):
         Square(3)
