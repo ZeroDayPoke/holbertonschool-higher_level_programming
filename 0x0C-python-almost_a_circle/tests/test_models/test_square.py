@@ -511,5 +511,9 @@ class TestSquare(unittest.TestCase):
         sqrstr2 = '[Square] (1) 0/0 - 1'
         self.assertEqual(sqrstr1, sqrstr2)
 
+    def test_lff_nofp(self):
+        geolst = Base.load_from_file()
+        self.assertEqual([], geolst)
+
 if __name__ == '__main__':
     unittest.main()

@@ -222,5 +222,9 @@ class TestBase(unittest.TestCase):
         rektstr2 = '[Rectangle] (1) 0/0 - 1/1'
         self.assertEqual(rektstr1, rektstr2)
 
+    def test_lff_nofp(self):
+        geolst = Square.load_from_file()
+        self.assertEqual([], geolst)
+
 if __name__ == '__main__':
     unittest.main()
