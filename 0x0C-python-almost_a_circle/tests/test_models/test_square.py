@@ -5,6 +5,8 @@ from models.square import Square
 from models.base import Base
 from models.rectangle import Rectangle
 import os
+from io import StringIO
+import sys
 
 
 class TestBase(unittest.TestCase):
@@ -482,6 +484,20 @@ class TestBase(unittest.TestCase):
         Square.save_to_file([sqr1, sqr2])
         sqrlst = Square.load_from_file()
         self.assertEqual(str(sqr2), str(sqrlst[1]))
+
+    @staticmethod
+    def disp_yoink(shape):
+        yoink = StringIO()
+        sys.stdout = yoink
+        shape.display()
+        sys.stdout = sys.__stdout__
+        return yoink
+
+    def test_sqr_dis(self):
+        sqr1 = Square(2, 1, 1, 1)
+        yoink = TestBase.disp_yoink(sqr1)
+        sqrstr = "\n ##\n ##\n"
+        self.assertEqual(yoink.getvalue(), sqrstr)
 
 if __name__ == '__main__':
     unittest.main()

@@ -4,6 +4,8 @@ import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 import os
+from io import StringIO
+import sys
 
 
 class TestRect(unittest.TestCase):
@@ -591,6 +593,20 @@ class TestRect(unittest.TestCase):
         Rectangle.save_to_file([rekt1, rekt2])
         rktlst = Rectangle.load_from_file()
         self.assertEqual(str(rekt2), str(rktlst[1]))
+
+    @staticmethod
+    def disp_yoink(shape):
+        yoink = StringIO()
+        sys.stdout = yoink
+        shape.display()
+        sys.stdout = sys.__stdout__
+        return yoink
+
+    def test_rkt_dis(self):
+        rekt1 = Rectangle(2, 2, 1, 1, 1)
+        yoink = TestRect.disp_yoink(rekt1)
+        rektstr = "\n ##\n ##\n"
+        self.assertEqual(yoink.getvalue(), rektstr)
 
 if __name__ == '__main__':
     unittest.main()
