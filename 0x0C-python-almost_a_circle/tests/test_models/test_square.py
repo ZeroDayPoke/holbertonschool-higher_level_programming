@@ -94,6 +94,10 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square(1, 2, 3, 4, 5)
 
+    def test_no_args(self):
+        with self.assertRaises(TypeError):
+            Square()
+
     def test_okay_sqr(self):
         sqr1 = Square(3, 0, 0, 1)
         self.assertEqual(sqr1.area(), 9)
