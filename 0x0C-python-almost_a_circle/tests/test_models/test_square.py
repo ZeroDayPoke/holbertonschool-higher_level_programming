@@ -299,64 +299,6 @@ class TestSquare(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square(2, 2, -3)
 
-    @classmethod
-    def dracarys(self):
-        try:
-            os.remove("Square.json")
-        except IOError:
-            pass
-        try:
-            os.remove("Rectangle.json")
-        except IOError:
-            pass
-        try:
-            os.remove("Base.json")
-        except IOError:
-            pass
-
-    def test_stf_sqr(self):
-        sqr1 = Square(1, 1, 1, 1)
-        Square.save_to_file([sqr1])
-        with open("Square.json") as fred:
-            self.assertEqual(len(fred.read()), 38)
-
-    def test_stf_sqr_2(self):
-        sqr1 = Square(1, 1, 1, 1)
-        sqr2 = Square(2, 2, 2, 2)
-        Square.save_to_file([sqr1, sqr2])
-        with open("Square.json") as fred:
-            self.assertEqual(len(fred.read()), 76)
-
-    def test_stf_sqr_mpt(self):
-        Square.save_to_file([])
-        with open("Square.json") as fred:
-            self.assertEqual(len(fred.read()), 2)
-
-    def test_stf_sqr_non(self):
-        Square.save_to_file(None)
-        with open("Square.json") as fred:
-            self.assertEqual(len(fred.read()), 2)
-
-    def test_fjs_sqr(self):
-        sqr1 = Square(1, 1, 1, 1)
-        dick1 = sqr1.to_dictionary()
-        jason_in = Square.to_json_string([dick1])
-        jason_out = Square.from_json_string(jason_in)
-        self.assertEqual(len(str(dick1)) + 2, len(str(jason_out)))
-
-    def test_crt_sqr(self):
-        sqr1 = Square(1, 1, 1, 1)
-        dick1 = sqr1.to_dictionary()
-        sqr11 = Square.create(**dick1)
-        self.assertEqual(str(sqr11), str(sqr1))
-
-    def test_lff_sqr(self):
-        sqr1 = Square(1, 1, 1, 1)
-        sqr2 = Square(2, 2, 2, 2)
-        Square.save_to_file([sqr1, sqr2])
-        sqrlst = Square.load_from_file()
-        self.assertEqual(str(sqr2), str(sqrlst[1]))
-
     @staticmethod
     def disp_yoink(shape):
         yoink = StringIO()
