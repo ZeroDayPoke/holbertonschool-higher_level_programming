@@ -201,6 +201,10 @@ class TestSquare(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square(float('nan'))
 
+    def test_inf_reg(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square(float('inf'))
+
     def test_flt_reg_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square(2, 2.2)
