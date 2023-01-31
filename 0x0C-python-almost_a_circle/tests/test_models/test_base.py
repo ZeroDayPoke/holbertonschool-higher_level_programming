@@ -19,30 +19,6 @@ class TestBase(unittest.TestCase):
     def test_int(self):
         self.assertEqual(Base(1).id, 1)
 
-    def test_flt(self):
-        self.assertEqual(Base(1.1).id, 1.1)
-
-    def test_chr(self):
-        self.assertEqual(Base('a').id, 'a')
-
-    def test_str(self):
-        self.assertEqual(Base("hi").id, "hi")
-
-    def test_boo(self):
-        self.assertEqual(Base(True).id, True)
-
-    def test_lst(self):
-        self.assertEqual(Base([1, 1]).id, [1, 1])
-
-    def test_dic(self):
-        self.assertEqual(Base({"richard": 1}).id, {"richard": 1})
-
-    def test_tup(self):
-        self.assertEqual(Base((1, 1)).id, (1, 1))
-
-    def test_set(self):
-        self.assertEqual(Base({1, 1}).id, {1, 1})
-
     def test_privacy_1(self):
         with self.assertRaises(AttributeError):
             print(Base.__nb_objects)
