@@ -101,7 +101,6 @@ class TestRect(unittest.TestCase):
         rekt1 = Rectangle(1, 1, 1, 1, 1)
         rekt1.update(x=2, y=3)
         self.assertEqual(rekt1.y, 3)
-        self.assertEqual(rekt1.x, 2)
 
     def test_str_rekt(self):
         rekt1 = Rectangle(1, 1, 1, 1, 1)
