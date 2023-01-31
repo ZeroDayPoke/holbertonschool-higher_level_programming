@@ -342,6 +342,26 @@ class TestRect(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             rekt1.update(y="YOLO")
 
+    def test_bad_upd_wid_val(self):
+        rekt1 = Rectangle(1, 1, 1, 1)
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            rekt1.update(width=-1)
+
+    def test_bad_upd_hei_val(self):
+        rekt1 = Rectangle(1, 1, 1, 1)
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            rekt1.update(height=-1)
+
+    def test_bad_upd_x_val(self):
+        rekt1 = Rectangle(1, 1, 1, 1)
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            rekt1.update(x=-1)
+
+    def test_bad_upd_y_val(self):
+        rekt1 = Rectangle(1, 1, 1, 1)
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            rekt1.update(y=-1)
+
     @staticmethod
     def disp_yoink(shape):
         yoink = StringIO()
