@@ -9,7 +9,7 @@ from io import StringIO
 import sys
 
 
-class TestBase(unittest.TestCase):
+class TestSquare(unittest.TestCase):
     """da UWUnit tests"""
     def test_if_base(self):
         self.assertIsInstance(Square(1), Base)
@@ -495,7 +495,7 @@ class TestBase(unittest.TestCase):
 
     def test_sqr_dis(self):
         sqr1 = Square(2, 1, 1, 1)
-        yoink = TestBase.disp_yoink(sqr1)
+        yoink = TestSquare.disp_yoink(sqr1)
         sqrstr = "\n ##\n ##\n"
         self.assertEqual(yoink.getvalue(), sqrstr)
 
