@@ -394,5 +394,10 @@ class TestRect(unittest.TestCase):
         rektstr2 = '[Rectangle] () 0/0 - 1/1'
         self.assertEqual(rektstr1, rektstr2)
 
+    def test_stf_rkt_non(self):
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json") as fred:
+            self.assertEqual(len(fred.read()), 2)
+
 if __name__ == '__main__':
     unittest.main()

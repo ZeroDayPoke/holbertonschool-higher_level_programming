@@ -83,18 +83,8 @@ class TestBase(unittest.TestCase):
         with open("Square.json") as fred:
             self.assertEqual(len(fred.read()), 2)
 
-    def test_stf_sqr_non(self):
-        Square.save_to_file(None)
-        with open("Square.json") as fred:
-            self.assertEqual(len(fred.read()), 2)
-
     def test_stf_rkt_mpt(self):
         Rectangle.save_to_file([])
-        with open("Rectangle.json") as fred:
-            self.assertEqual(len(fred.read()), 2)
-
-    def test_stf_rkt_non(self):
-        Rectangle.save_to_file(None)
         with open("Rectangle.json") as fred:
             self.assertEqual(len(fred.read()), 2)
 

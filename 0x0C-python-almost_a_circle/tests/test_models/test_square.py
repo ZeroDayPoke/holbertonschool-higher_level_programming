@@ -335,5 +335,10 @@ class TestSquare(unittest.TestCase):
         sqrstr2 = '[Square] (1) 0/0 - 1'
         self.assertEqual(sqrstr1, sqrstr2)
 
+    def test_stf_sqr_non(self):
+        Square.save_to_file(None)
+        with open("Square.json") as fred:
+            self.assertEqual(len(fred.read()), 2)
+
 if __name__ == '__main__':
     unittest.main()
