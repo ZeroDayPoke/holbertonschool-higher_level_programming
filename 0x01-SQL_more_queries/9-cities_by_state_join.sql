@@ -1,6 +1,5 @@
 -- ASC ORD CITYID
-SELECT city.id, city.name, stat.name
-FROM 'cities' AS city
-    INNER JOIN 'states' AS stat
-    ON city.state_id = state.id
-ORDER BY city.id;
+SELECT cities.id, cities.name, states.name
+FROM cities, states
+WHERE cities.state_id = states.id
+ORDER BY cities.id ASC;
