@@ -1,0 +1,2 @@
+-- SELECT ALL IN DB FROM TABLE
+SELECT * FROM first_table;

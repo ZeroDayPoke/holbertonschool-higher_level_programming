@@ -1,0 +1,2 @@
+-- SHOW TABLE DEC
+SHOW CREATE TABLE first_table;
