@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""test comment"""
 import sys
 import MySQLdb
 
