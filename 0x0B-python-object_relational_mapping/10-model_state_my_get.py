@@ -16,5 +16,5 @@ if __name__ == '__main__':
         if sys.argv[4] == state.name:
             toggle = True
             print("{}".format(state.id))
-    if toggle == False:
+    if not toggle:
         print("Not found")
