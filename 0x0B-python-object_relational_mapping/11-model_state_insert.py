@@ -16,7 +16,7 @@ if __name__ == '__main__':
         if state.name == "Louisiana":
             toggle = True
             break
-    if toggle == True:
+    if toggle:
         print("LA already exists in db")
     else:
         LA = State(name="Louisiana")
