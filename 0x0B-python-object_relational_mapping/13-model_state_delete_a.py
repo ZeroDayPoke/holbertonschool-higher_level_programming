@@ -18,3 +18,4 @@ if __name__ == '__main__':
             toggle = True
     if toggle:
         session.commit()
+    session.close()
