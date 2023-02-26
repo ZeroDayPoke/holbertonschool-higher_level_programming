@@ -13,10 +13,10 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
     toggle = False
-    for state in session.query(State):
-        if "a" in state.name:
-            session.delete(state)
-            toggle = True
+    for state in session.query(State) \
+            .filter(State.name.like('%a%')).order_by(State.id):
+        session.delete(state)
+        toggle = True
     if toggle:
         session.commit()
     session.close()
