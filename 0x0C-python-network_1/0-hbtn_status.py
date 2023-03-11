@@ -3,7 +3,7 @@
 import urllib.request
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     req = urllib.request.Request('https://intranet.hbtn.io/status')
     with urllib.request.urlopen(req) as resp:
         body = resp.read()
