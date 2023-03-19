@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """almost a circle module"""
 import json
+import csv
 
 
 class Base:
@@ -54,4 +55,32 @@ class Base:
                 richards = Base.from_json_string(jason.read())
                 return [cls.create(**swag) for swag in richards]
         except IOError:
+            return []
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, mode="r") as f:
+                reader = csv.reader(f)
+                obj_list = []
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        obj_dict = {
+                            "id": int(row[0]),
+                            "width": int(row[1]),
+                            "height": int(row[2]),
+                            "x": int(row[3]),
+                            "y": int(row[4])
+                        }
+                    elif cls.__name__ == "Square":
+                        obj_dict = {
+                            "id": int(row[0]),
+                            "size": int(row[1]),
+                            "x": int(row[2]),
+                            "y": int(row[3])
+                        }
+                    obj_list.append(cls.create(**obj_dict))
+                return obj_list
+        except FileNotFoundError:
             return []
