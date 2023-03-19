@@ -37,14 +37,14 @@ try:
 
         """print every 10 lines"""
         if line_count % 10 == 0:
-            print(f'Total file size: {total_size}')
+            print('Total file size: {}'.format(total_size))
             for code in sorted(status_counts.keys()):
                 if status_counts[code] > 0:
-                    print(f'{code}: {status_counts[code]}')
+                    print('{}: {}'.format(code, status_counts[code]))
 
 except KeyboardInterrupt:
     """print balance after SIGINT"""
-    print(f'Total file size: {total_size}')
+    print('Total file size: {}'.format(total_size))
     for code in sorted(status_counts.keys()):
         if status_counts[code] > 0:
-            print(f'{code}: {status_counts[code]}')
+            print('{}: {}'.format(code, status_counts[code]))
