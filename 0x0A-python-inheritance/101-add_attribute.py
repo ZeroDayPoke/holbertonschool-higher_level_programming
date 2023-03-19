@@ -14,7 +14,7 @@ def add_attribute(obj, attr, value):
         """Check if the object already has the attribute"""
         obj.__dict__[attr] = value
     else:
-        """Raise a TypeError exception if the object can't have new attributes"""
+        """Raise TypeError exception if the object can't have new attr"""
         if not hasattr(obj, '__dict__'):
             msg = "can't add new attribute"
             raise TypeError(msg)
