@@ -22,8 +22,10 @@ def append_after(filename="", search_string="", new_string=""):
         for line in lines:
             """Write the current line to the file"""
             fred.write(line)
-            """If the line contains the search string, append the new string to the file"""
+            """If the line contains the search string, append
+            the new string to the file"""
             if search_string in line:
                 fred.write(new_string)
-        """Truncate the file after the last line to remove any remaining content"""
+        """Truncate the file after the last line
+        to remove any remaining content"""
         fred.truncate()
