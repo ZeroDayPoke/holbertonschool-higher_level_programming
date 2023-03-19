@@ -8,6 +8,8 @@ If no score found, return None
 You can assume all students have a different score
 You are not allowed to import any module
 """
+
+
 def best_score(a_dictionary):
     if a_dictionary:
         return max(a_dictionary, key=a_dictionary.get)

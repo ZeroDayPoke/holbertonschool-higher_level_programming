@@ -8,6 +8,7 @@ Returns 0 if the list is empty
 You are not allowed to import any module
 """
 
+
 def weight_average(my_list=[]):
     """return 0 if list empty"""
     if not my_list:

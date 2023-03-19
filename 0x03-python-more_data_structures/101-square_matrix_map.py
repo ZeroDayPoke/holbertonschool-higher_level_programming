@@ -14,5 +14,7 @@ You have to use map
 You are not allowed to use for or while
 Your file should be max 3 lines
 """
+
+
 def square_matrix_map(matrix=[]):
     return list(map(lambda row: list(map(lambda val: val ** 2, row)), matrix))
