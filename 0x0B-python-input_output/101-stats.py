@@ -25,22 +25,26 @@ line_count = 0
 try:
     """read from STDINFILENO"""
     for line in sys.stdin:
-        """tokenize, get size and status"""
-        parts = line.split()
-        size = int(parts[-1])
-        status = int(parts[-2])
+        try:
+            """tokenize, get size and status"""
+            parts = line.split()
+            size = int(parts[-1])
+            status = int(parts[-2])
 
-        """update counts"""
-        total_size += size
-        status_counts[status] += 1
-        line_count += 1
+            """update counts"""
+            total_size += size
+            status_counts[status] += 1
+            line_count += 1
 
-        """print every 10 lines"""
-        if line_count % 10 == 0:
-            print('File size: {}'.format(total_size))
-            for code in sorted(status_counts.keys()):
-                if status_counts[code] > 0:
-                    print('{}: {}'.format(code, status_counts[code]))
+            """print every 10 lines"""
+            if line_count % 10 == 0:
+                print('File size: {}'.format(total_size))
+                for code in sorted(status_counts.keys()):
+                    if status_counts[code] > 0:
+                        print('{}: {}'.format(code, status_counts[code]))
+
+        except ValueError:
+            pass
 
     print('File size: {}'.format(total_size))
     for code in sorted(status_counts.keys()):
