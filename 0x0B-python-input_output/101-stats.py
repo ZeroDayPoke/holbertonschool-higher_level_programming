@@ -42,6 +42,11 @@ try:
                 if status_counts[code] > 0:
                     print('{}: {}'.format(code, status_counts[code]))
 
+    print('Total file size: {}'.format(total_size))
+    for code in sorted(status_counts.keys()):
+        if status_counts[code] > 0:
+            print('{}: {}'.format(code, status_counts[code]))
+
 except KeyboardInterrupt:
     """print balance after SIGINT"""
     print('Total file size: {}'.format(total_size))
