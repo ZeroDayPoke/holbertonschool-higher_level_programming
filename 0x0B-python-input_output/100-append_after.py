@@ -27,5 +27,3 @@ def append_after(filename="", search_string="", new_string=""):
                 fred.write(new_string)
         """Truncate the file after the last line to remove any remaining content"""
         fred.truncate()
-        """Add new line to make pretty"""
-        fred.write('\n')
