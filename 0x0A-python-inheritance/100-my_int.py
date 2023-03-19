@@ -7,7 +7,7 @@ class MyInt(int):
     def __eq__(self, other):
         """overrides == operator"""
         return not super().__eq__(other)
-    
+
     def __ne__(self, other):
         """overrides != operator"""
         return super().__eq__(other)
