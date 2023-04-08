@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const process = require('process');
 
-function secondLargest(numbers) {
+function secondLargest (numbers) {
   let largest = -Infinity;
   let secondLargest = -Infinity;
 
