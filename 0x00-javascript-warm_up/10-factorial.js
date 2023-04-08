@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const process = require('process');
 
-function factorial(n) {
+function factorial (n) {
   if (isNaN(n) || n <= 1) {
     return 1;
   } else {
