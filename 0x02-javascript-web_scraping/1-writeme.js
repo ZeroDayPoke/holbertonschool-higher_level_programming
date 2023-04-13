@@ -10,6 +10,6 @@ if (process.argv.length < 4) {
   fs.writeFile(filePath, contentToWrite, 'utf8', (error) => {
     if (error) {
       console.error(` :( An error occurred while writing to the file: ${error}`);
-      return;
-    }});
+    }
+  });
 }
