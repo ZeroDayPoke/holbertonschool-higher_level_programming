@@ -19,7 +19,6 @@ if (process.argv.length < 4) {
         console.error(` :( An error occurred while writing to the file: ${error}`);
         return;
       }
-      console.log('UWU');
     });
   });
 }
