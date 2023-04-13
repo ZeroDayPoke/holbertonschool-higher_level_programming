@@ -25,10 +25,7 @@ if (process.argv.length < 3) {
           }
         }
       });
-
-      for (const userId in userTaskCounts) {
-        console.log(`${userId}: ${userTaskCounts[userId]}`);
-      }
+      console.log(userTaskCounts);
     } else {
       console.error(` :( An error occurred while fetching the todos: ${response.statusCode}`);
     }
